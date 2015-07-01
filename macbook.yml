@@ -1,4 +1,4 @@
 ---
-- name: MacBook
+- hosts: localhost
   roles:
     - macbook
