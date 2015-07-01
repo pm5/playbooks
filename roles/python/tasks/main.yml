@@ -1,0 +1,3 @@
+---
+- name: ensure pyenv is the latest
+  git: repo=https://github.com/yyuu/pyenv.git clone=yes dest=~/.pyenv update=yes
