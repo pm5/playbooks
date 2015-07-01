@@ -22,8 +22,7 @@ if [[ ! -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
-    brew install readline
-    pyenv install 2.7.10
+    CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 2.7.10
     pyenv global 2.7.10
 fi
 
