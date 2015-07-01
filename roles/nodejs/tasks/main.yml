@@ -1,0 +1,14 @@
+---
+- name: ensure nvm is the latest
+  shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
+
+- name: ensure node.js is the latest iojs
+  shell: source $HOME/.nvm/nvm.sh && nvm install iojs && nvm alias default iojs
+
+- name: ensure npm packages are the latest
+  npm: name={{ item }} global=yes state=latest
+  with_items:
+    - jade
+    - stylus
+    - livescript
+    - babel
