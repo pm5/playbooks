@@ -1,0 +1,2 @@
+---
+- name: ensure Homebrew is the latest
