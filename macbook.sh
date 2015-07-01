@@ -46,4 +46,4 @@ fi
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook macbook.yml -v
+ansible-playbook -i hosts macbook.yml -v
