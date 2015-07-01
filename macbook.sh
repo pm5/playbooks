@@ -22,6 +22,7 @@ if [[ ! -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
+    brew install zlib
     pyenv install 2.7.10
     pyenv global 2.7.10
 fi
