@@ -15,15 +15,10 @@
     - cscope
     - ctags
     - curl
-    - dhcpdump
     - dict
-    - docker
-    - docker-completion
     - erlang
     - espeak
-    - faac
     - ffmpeg
-    - fontforge
     - gcc
     - gdb
     - git
@@ -63,13 +58,11 @@
     - tig
     - tmux
     - tree
-    - tuntap
     - unrar
     - valgrind
     - w3m
     - webp
     - wget
-    - xz
 
 - name: ensure Homebrew Cask is the latest
   homebrew: name=caskroom/cask/brew-cask state=latest
@@ -78,7 +71,6 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - amethyst
-    - appcleaner
     - boxer
     - caffeine
     - calibre
@@ -90,13 +82,10 @@
     - dropbox
     - evernote
     - filezilla
-    - firefox
     - firefoxdeveloperedition
     - free-ruler
     - freemind
-    - gimp
     - gog-downloader
-    - google-chrome
     - google-chrome-canary
     - google-earth-pro
     - google-refine
@@ -112,7 +101,6 @@
     - nally
     - ngrok
     - nocturne
-    - onyx
     - qgis
     - quicksilver
     - rowanj-gitx
@@ -123,7 +111,6 @@
     - telegram
     - temperature-monitor
     - the-unarchiver
-    - tilemill
     - time-out
     - transmission
     - tunnelblick
