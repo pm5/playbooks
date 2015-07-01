@@ -6,7 +6,6 @@
   homebrew: name={{ item }} state=latest
   with_items:
     - ack
-    - apple-gcc42
     - autoconf
     - automake
     - bash-completion
