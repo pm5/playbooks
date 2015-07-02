@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    os_family: OSX
   roles:
     - macbook
     - nodejs
