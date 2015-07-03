@@ -1,6 +1,6 @@
 ---
-- name: ensure Homebrew itself is the latest
-  homebrew: state=latest update_homebrew=yes
+- name: ensure Homebrew itself and installed packages are the latest
+  homebrew: state=latest update_homebrew=yes upgrade_all=yes
 
 - name: ensure Homebrew packages are the latest
   homebrew: name={{ item }} state=latest
