@@ -1,0 +1,8 @@
+if [[ ! -d $ANSIBLE_DIRECTORY ]]; then
+    echo "Install Ansible"
+    git clone git://github.com/ansible/ansible.git --recursive $ANSIBLE_DIRECTORY
+    cd $ANSIBLE_DIRECTORY
+    pip install six paramiko PyYAML Jinja2 httplib2
+fi
+
+source $ANSIBLE_DIRECTORY/hacking/env-setup > /dev/null

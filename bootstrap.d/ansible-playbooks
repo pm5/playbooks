@@ -1,0 +1,4 @@
+if [[ ! -d $ANSIBLE_PLAYBOOKS_DIRECTORY ]]; then
+    echo "Install Ansible Playbooks"
+    git clone git@github.com:pm5/ansible-playbooks.git $ANSIBLE_PLAYBOOKS_DIRECTORY
+fi
