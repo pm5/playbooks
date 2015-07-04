@@ -3,4 +3,4 @@ if [[ ! -x /usr/local/bin/brew ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-export PATH=/usr/local/bin:$PATH
+#export PATH=/usr/local/bin:$PATH
