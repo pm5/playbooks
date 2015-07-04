@@ -28,6 +28,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+pip install paramiko jinja2 PyYAML setuptools pycrypto six
 
 export PATH=/usr/local/bin:$PATH
 
