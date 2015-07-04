@@ -16,4 +16,4 @@ source ./bootstrap.d/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook -i hosts macbook.yml -v
+ansible-playbook -i hosts macbook.yml --ask-become-pass -v
