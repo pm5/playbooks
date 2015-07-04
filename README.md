@@ -8,7 +8,7 @@ Usage
         # install dotfiles first
         $ git clone https://github.com/pm5/ansible-playbooks ~/src/ansible-playbooks
         $ cd ~/src/ansible-playbooks
-        $ ./macbook
+        $ ./macbook <hostname>
 
 License
 -------
