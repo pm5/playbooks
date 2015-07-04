@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$1" == "" ]]; then
+    echo "Usage: macbook.sh <hostname>"
+    exit -1
+fi
+
 set -e
 
 SRC_DIRECTORY="$HOME/src"
@@ -16,4 +21,4 @@ source ./bootstrap.d/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook -i hosts macbook.yml --ask-become-pass -v
+ansible-playbook -i hosts macbook.yml --ask-become-pass -v -e "hostname=$1"

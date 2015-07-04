@@ -1,4 +1,16 @@
 ---
+- name: ensure hostname is {{hostname}}
+  sudo: yes
+  shell: scutil --set HostName {{hostname}}
+
+- name: ensure localhostname is {{hostname}}
+  sudo: yes
+  shell: scutil --set LocalHostName {{hostname}}
+
+- name: ensure computer name is {{hostname}}
+  sudo: yes
+  shell: scutil --set ComputerName {{hostname}}
+
 - name: ensure Homebrew is tapped to homebrew/completions
   homebrew_tap: tap=homebrew/completions state=present
 
