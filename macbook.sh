@@ -25,6 +25,9 @@ if [[ ! -d $HOME/.pyenv ]]; then
     CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 2.7.10
     pyenv global 2.7.10
 fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 export PATH=/usr/local/bin:$PATH
 
