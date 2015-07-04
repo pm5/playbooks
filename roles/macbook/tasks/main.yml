@@ -1,4 +1,7 @@
 ---
+- name: ensure Homebrew is tapped to homebrew/completions
+  homebrew_tap: tap=homebrew/completions state=present
+
 - name: ensure Homebrew itself and installed packages are the latest
   homebrew: state=latest update_homebrew=yes upgrade_all=yes
 
@@ -57,6 +60,9 @@
 
 - name: ensure Homebrew Cask is the latest
   homebrew: name=caskroom/cask/brew-cask state=latest
+
+- name: ensure Homebrew Cask is tapped to caskroom/versions
+  homebrew_tap: tap=caskroom/versions state=present
 
 - name: ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
