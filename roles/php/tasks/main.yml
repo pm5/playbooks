@@ -33,10 +33,10 @@
     - zlib
 
 - name: ensure PHP 5.5.x is the latest
-  shell: phpbrew install 5.5 +default +fpm -- --with-openssl=/usr/local --without-bz2
+  shell: phpbrew install 5.5.26 +default +fpm -- --with-openssl=/usr/local --without-bz2
 
 - name: ensure PHP 5.5.x is used by default
-  shell: phpbrew switch 5.5
+  shell: phpbrew switch 5.5.26
 
 - name: ensure composer are present
   shell: phpbrew install-composer
