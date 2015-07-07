@@ -1,0 +1,45 @@
+---
+- name: ensure Phpbrew is present
+  get_url: dest=~/bin/phpbrew url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew force=yes
+  register: phpbrew
+
+- name: ensure Phpbrew just downloaded is executable
+  shell: chmod 700 ~/bin/phpbrew
+  when: phpbrew.changed
+
+- name: ensure Phpbrew is the latest
+  shell: phpbrew self-update
+
+- name: ensure Phpbrew environment is initialized
+  shell: phpbrew init
+  ignore_errors: yes
+  when: phpbrew.changed
+
+- name: ensure Homebrew Dupes is tapped
+  when: os_family == "OSX"
+  homebrew_tap: tap=homebrew/dupes state=present
+
+- name: ensure Homebrew dependencies are the latest
+  when: os_family == "OSX"
+  homebrew: name=zlib state=latest
+
+- name: ensure neede Homebrew packages are linked
+  shell: brew link --force {{item}}
+  when: os_family == "OSX"
+  with_items:
+    - openssl
+    - curl
+    - readline
+    - zlib
+
+- name: ensure PHP 5.5.x is the latest
+  shell: phpbrew install 5.5 +default +fpm -- --with-openssl=/usr/local --without-bz2
+
+- name: ensure PHP 5.5.x is used by default
+  shell: phpbrew switch 5.5
+
+- name: ensure composer are present
+  shell: phpbrew install-composer
+
+- name: ensure phpunit are present
+  shell: phpbrew install-phpunit
