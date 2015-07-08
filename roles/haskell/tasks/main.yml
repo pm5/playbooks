@@ -1,0 +1,9 @@
+---
+- name: ensure GHC and Cabal are the latest
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - ghc
+    - cabal-install
+
+- name: ensure Cabal packages are updated
+  shell: cabal update
