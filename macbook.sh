@@ -22,4 +22,4 @@ source ./bootstrap.d/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook -i hosts macbook.yml --ask-become-pass -v -e "hostname=$1"
+ansible-playbook macbook.yml --ask-become-pass -v -e "hostname=$1"
