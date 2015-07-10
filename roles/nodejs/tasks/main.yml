@@ -6,7 +6,7 @@
   shell: source $HOME/.nvm/nvm.sh && nvm install iojs && nvm alias default iojs
 
 - name: ensure npm packages are the latest
-  npm: name={{ item }} global=yes state=latest executable=$HOME/.nvm/versions/io.js/v2.3.3/bin/npm
+  npm: name={{ item }} global=yes state=latest
   with_items:
     - jade
     - stylus
