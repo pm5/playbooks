@@ -24,7 +24,7 @@
   homebrew: name=zlib state=latest
 
 - name: ensure neede Homebrew packages are linked
-  shell: brew link --force {{item}}
+  homebrew: name={{ item }} state=linked
   when: os_family == "OSX"
   with_items:
     - openssl
@@ -33,13 +33,13 @@
     - zlib
 
 - name: ensure PHP 5.5.x is the latest
-  shell: phpbrew install 5.5.26 +default +fpm -- --with-openssl=/usr/local --without-bz2
+  shell: phpbrew install 5.5 +default +fpm -- --with-openssl=/usr/local --without-bz2
 
 - name: ensure PHP 5.5.x is used by default
-  shell: phpbrew switch 5.5.26
+  shell: source ~/.phpbrew/bashrc && phpbrew switch 5.5
 
 - name: ensure composer are present
-  shell: phpbrew install-composer
+  shell: source ~/.phpbrew/bashrc && phpbrew install-composer
 
 - name: ensure phpunit are present
-  shell: phpbrew install-phpunit
+  shell: source ~/.phpbrew/bashrc && phpbrew install-phpunit
