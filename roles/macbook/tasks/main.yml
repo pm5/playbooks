@@ -27,12 +27,14 @@
     - bash-completion
     - bvi
     - cmake
+    - cowsay
     - cscope
     - ctags
     - curl
     - dict
     - espeak
     - ffmpeg
+    - fortune
     - git
     - git-annex
     - gnupg
