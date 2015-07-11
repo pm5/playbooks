@@ -1,4 +1,8 @@
 ---
+- name: ensure hostname var is defined
+  command: 'false'
+  when: not hostname
+
 - name: ensure hostname is {{hostname}}
   sudo: yes
   shell: scutil --set HostName {{hostname}}
