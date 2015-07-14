@@ -1,142 +1,142 @@
 ---
-#- name: ensure hostname var is defined
-  #command: 'false'
-  #when: not hostname
+- name: ensure hostname var is defined
+  command: 'false'
+  when: not hostname
 
-#- name: ensure hostname is {{hostname}}
-  #sudo: yes
-  #shell: scutil --set HostName {{hostname}}
+- name: ensure hostname is {{hostname}}
+  sudo: yes
+  shell: scutil --set HostName {{hostname}}
 
-#- name: ensure localhostname is {{hostname}}
-  #sudo: yes
-  #shell: scutil --set LocalHostName {{hostname}}
+- name: ensure localhostname is {{hostname}}
+  sudo: yes
+  shell: scutil --set LocalHostName {{hostname}}
 
-#- name: ensure computer name is {{hostname}}
-  #sudo: yes
-  #shell: scutil --set ComputerName {{hostname}}
+- name: ensure computer name is {{hostname}}
+  sudo: yes
+  shell: scutil --set ComputerName {{hostname}}
 
-#- name: ensure Homebrew is tapped to homebrew/completions
-  #homebrew_tap: tap=homebrew/completions state=present
+- name: ensure Homebrew is tapped to homebrew/completions
+  homebrew_tap: tap=homebrew/completions state=present
 
-#- name: ensure Homebrew itself and installed packages are the latest
-  #homebrew: state=latest update_homebrew=yes upgrade_all=yes
+- name: ensure Homebrew itself and installed packages are the latest
+  homebrew: state=latest update_homebrew=yes upgrade_all=yes
 
-#- name: ensure Homebrew packages are the latest
-  #homebrew: name={{ item }} state=latest
-  #ignore_errors: yes
-  #with_items:
-    #- ack
-    #- autoconf
-    #- automake
-    #- bash-completion
-    #- bvi
-    #- cmake
-    #- cowsay
-    #- cscope
-    #- ctags
-    #- curl
-    #- dict
-    #- espeak
-    #- ffmpeg
-    #- fortune
-    #- git
-    #- git-annex
-    #- gnupg
-    #- graphicsmagick
-    #- hub
-    #- hydra
-    #- imagemagick
-    #- jpeg
-    #- jq
-    #- ledger
-    #- lorem
-    #- mcrypt
-    #- mercurial
-    #- mhash
-    #- mobile-shell
-    #- mr
-    #- msmtp
-    #- mutt
-    #- ncftp
-    #- nmap
-    #- offline-imap
-    #- openssl
-    #- pdftohtml
-    #- pkg-config
-    #- pwgen
-    #- readline
-    #- remind
-    #- rename
-    #- sqlite
-    #- tig
-    #- tmux
-    #- tree
-    #- unrar
-    #- w3m
-    #- webp
-    #- wget
+- name: ensure Homebrew packages are the latest
+  homebrew: name={{ item }} state=latest
+  ignore_errors: yes
+  with_items:
+    - ack
+    - autoconf
+    - automake
+    - bash-completion
+    - bvi
+    - cmake
+    - cowsay
+    - cscope
+    - ctags
+    - curl
+    - dict
+    - espeak
+    - ffmpeg
+    - fortune
+    - git
+    - git-annex
+    - gnupg
+    - graphicsmagick
+    - hub
+    - hydra
+    - imagemagick
+    - jpeg
+    - jq
+    - ledger
+    - lorem
+    - mcrypt
+    - mercurial
+    - mhash
+    - mobile-shell
+    - mr
+    - msmtp
+    - mutt
+    - ncftp
+    - nmap
+    - offline-imap
+    - openssl
+    - pdftohtml
+    - pkg-config
+    - pwgen
+    - readline
+    - remind
+    - rename
+    - sqlite
+    - tig
+    - tmux
+    - tree
+    - unrar
+    - w3m
+    - webp
+    - wget
 
-#- name: ensure Homebrew Cask is the latest
-  #homebrew: name=caskroom/cask/brew-cask state=latest
+- name: ensure Homebrew Cask is the latest
+  homebrew: name=caskroom/cask/brew-cask state=latest
 
-#- name: ensure Homebrew Cask is tapped to caskroom/versions
-  #homebrew_tap: tap=caskroom/versions state=present
+- name: ensure Homebrew Cask is tapped to caskroom/versions
+  homebrew_tap: tap=caskroom/versions state=present
 
-#- name: ensure Homebrew Cask packages are the latest
-  #homebrew_cask: name={{ item }} state=present
-  #ignore_errors: yes
-  #with_items:
-    #- amethyst
-    #- boxer
-    #- caffeine
-    #- calibre
-    #- clamxav
-    #- coconutbattery
-    #- color-oracle
-    #- colors
-    #- disk-inventory-x
-    #- dropbox
-    #- evernote
-    #- filezilla
-    #- firefoxdeveloperedition
-    #- free-ruler
-    #- freemind
-    #- gog-downloader
-    #- google-chrome-canary
-    #- google-earth-pro
-    #- google-refine
-    #- gpgtools
-    #- img2icns
-    #- iterm2
-    #- java
-    #- josm
-    #- karabiner
-    #- libreoffice
-    #- macdown
-    #- macvim
-    #- nally
-    #- ngrok
-    #- nocturne
-    #- qgis
-    #- quicksilver
-    #- rowanj-gitx
-    #- sequel-pro
-    #- skype
-    #- slack
-    #- spotify
-    #- telegram
-    #- temperature-monitor
-    #- the-unarchiver
-    #- time-out
-    #- transmission
-    #- tunnelblick
-    #- vagrant
-    #- virtualbox
-    #- vlc
-    #- wineskin-winery
-    #- wireshark
-    #- xquartz
-    #- zotero
+- name: ensure Homebrew Cask packages are the latest
+  homebrew_cask: name={{ item }} state=present
+  ignore_errors: yes
+  with_items:
+    - amethyst
+    - boxer
+    - caffeine
+    - calibre
+    - clamxav
+    - coconutbattery
+    - color-oracle
+    - colors
+    - disk-inventory-x
+    - dropbox
+    - evernote
+    - filezilla
+    - firefoxdeveloperedition
+    - free-ruler
+    - freemind
+    - gog-downloader
+    - google-chrome-canary
+    - google-earth-pro
+    - google-refine
+    - gpgtools
+    - img2icns
+    - iterm2
+    - java
+    - josm
+    - karabiner
+    - libreoffice
+    - macdown
+    - macvim
+    - nally
+    - ngrok
+    - nocturne
+    - qgis
+    - quicksilver
+    - rowanj-gitx
+    - sequel-pro
+    - skype
+    - slack
+    - spotify
+    - telegram
+    - temperature-monitor
+    - the-unarchiver
+    - time-out
+    - transmission
+    - tunnelblick
+    - vagrant
+    - virtualbox
+    - vlc
+    - wineskin-winery
+    - wireshark
+    - xquartz
+    - zotero
 
   - name: ensure Karabiner custom mappings are present
     copy: src=karabiner.xml dest="~/Library/Application Support/Karabiner/private.xml"
