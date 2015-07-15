@@ -13,3 +13,4 @@
   with_items:
     - compass
     - moretext
+    - terminal-notifier

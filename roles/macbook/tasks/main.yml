@@ -65,6 +65,7 @@
     - pkg-config
     - pwgen
     - readline
+    - reattach-to-user-namespace
     - remind
     - rename
     - sqlite
