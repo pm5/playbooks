@@ -139,5 +139,5 @@
     - xquartz
     - zotero
 
-  - name: ensure Karabiner custom mappings are present
-    copy: src=karabiner.xml dest="~/Library/Application Support/Karabiner/private.xml"
+- name: ensure Karabiner custom mappings are present
+  copy: src=karabiner.xml dest="~/Library/Application Support/Karabiner/private.xml"
