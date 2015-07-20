@@ -1,3 +1,12 @@
 ---
 - name: ensure pyenv is the latest
   git: repo=https://github.com/yyuu/pyenv.git clone=yes dest=~/.pyenv update=yes
+
+- name: ensure Python packages are the latest
+  pip: name={{ item }} state=present
+  with_items:
+    - six
+    - paramiko
+    - PyYAML
+    - Jinja2
+    - httplib2
