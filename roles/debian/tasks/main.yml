@@ -1,0 +1,8 @@
+---
+- name: ensure hostname var is defined
+  command: 'false'
+  when: not hostname
+
+- name: ensure hostname is {{hostname}}
+  sudo: yes
+  lineinfile: line='127.0.0.1 {{hostname}}' dest=/etc/hosts create=yes state=present
