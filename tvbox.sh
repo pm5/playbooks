@@ -14,8 +14,13 @@ ANSIBLE_PLAYBOOKS_DIRECTORY="$SRC_DIRECTORY/ansible-playbooks"
 
 mkdir -p $SRC_DIRECTORY
 
-sudo apt-get update -y && apt-get install git -y
-
+#sudo apt-get update -y
+#sudo apt-get install git -y
+## for pyenv
+#sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm
+#
+#source ./bootstrap.d/pyenv
+sudo apt-get install -y python-six python-paramiko python-yaml python-jinja2 python-httplib2
 source ./bootstrap.d/ansible
 source ./bootstrap.d/ansible-playbooks
 

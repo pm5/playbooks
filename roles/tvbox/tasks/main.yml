@@ -1,0 +1,20 @@
+---
+- name: ensure python-apt is the latest
+  apt: name=python-apt state=latest
+
+#- name: ensure apt repositories are the latest
+#  apt_repository: repo={{ item }} update_cache=yes state=present
+#  with_items:
+#    - "deb http://ftp.tw.debian.org/debian/ jessie non-free contrib main"
+#    - "deb http://security.debian.org/ jessie/updates non-free contrib main"
+
+- name: ensure packages are the latest
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+    - flashplugin-nonfree
+    - handbrake
+    - ibus
+    - ibus-table-cangjie5
+    - chromium
+    - pepperflashplugin-nonfree
+    - git-annex
