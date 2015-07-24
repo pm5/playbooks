@@ -13,3 +13,5 @@
     - livescript
     - babel
     - http-server
+    - cloudflare-cli
+    - statuscake-cli
