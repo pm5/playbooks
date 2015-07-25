@@ -9,7 +9,7 @@
 #    - "deb http://security.debian.org/ jessie/updates non-free contrib main"
 
 - name: ensure packages are the latest
-  apt: name={{ item }} update_cache=yes state=latest
+  apt: name={{ item }} update_cache=yes state=latest cache_valid_time=43200
   with_items:
     - flashplugin-nonfree
     - handbrake
@@ -19,3 +19,12 @@
     - pepperflashplugin-nonfree
     - git-annex
     - tilda
+
+- name: ensure Dropbox repository key is present
+  apt_key: keyserver=pgp.mit.edu id=5044912E
+
+- name: ensure Dropbox repository is present
+  apt_repository: repo="deb http://linux.dropbox.com/debian jessie main" update_cache=yes
+
+- name: ensure Dropbox is the latest
+  apt: name=dropbox state=latest
