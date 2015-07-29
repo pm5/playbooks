@@ -1,0 +1,14 @@
+---
+- name: ensure Syncthing package is the latest
+  homebrew: name={{ item }} state=latest
+  ignore_errors: yes
+  with_items:
+    - syncthing
+    #- syncthing-bar
+  when: ansible_system == "Darwin"
+
+- name: ensure Syncthing launchd configuration is present
+  file: src=/usr/local/opt/syncthing/homebrew.mxcl.syncthing.plist dest=~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist state=link
+
+- name: ensure Syncthing is kept running
+  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist
