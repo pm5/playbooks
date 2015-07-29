@@ -3,10 +3,10 @@
   vars:
     os_family: OSX
   roles:
-    #- macbook
-    #- nodejs
-    #- python
-    #- ruby
+    - macbook
+    - nodejs
+    - python
+    - ruby
     #- php
     #- haskell
     - syncthing
