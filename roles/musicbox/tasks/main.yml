@@ -5,7 +5,15 @@
 
 - name: ensure Spotify repository is present
   when: ansible_system == "Linux"
-  apt_repository: repo="deb http://repository.spotify.com stable non-free" update_cache=yes
+  apt_repository: repo={{ item }} update_cache=yes
+  with_items:
+    - "deb http://repository.spotify.com stable non-free"
+    - "deb http://ftp.tw.debian.org/debian/ wheezy non-free main contrib"
+    - "deb http://security.debian.org/ wheezy/updates main"
+
+- name: ensure libgcrypt11 in present
+  when: ansible_system == "Linux"
+  apt: name=libgcrypt11 update_cache=yes cache_valid_time=3600 state=latest
 
 - name: ensure Spotify is the latest
   when: ansible_system == "Linux"
