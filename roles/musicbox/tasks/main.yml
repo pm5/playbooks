@@ -9,7 +9,7 @@
 
 - name: ensure Spotify is the latest
   when: ansible_system == "Linux"
-  apt: name=spotify-client update_cache=yes cach_valid_time=3600 state=latest
+  apt: name=spotify-client update_cache=yes cache_valid_time=3600 state=latest
 
 - name: ensure Spotify is the latest
   when: ansible_system == "Darwin"
