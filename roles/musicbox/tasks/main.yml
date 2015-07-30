@@ -1,0 +1,17 @@
+---
+- name: ensure Spotify repository signing key is present
+  when: ansible_system == "Linux"
+  apt_key: keyserver=keyserver.ubuntu.com id=D2C19886
+
+- name: ensure Spotify repository is present
+  when: ansible_system == "Linux"
+  apt_repository: repo="deb http://repository.spotify.com stable non-free" update_cache=yes
+
+- name: ensure Spotify is the latest
+  when: ansible_system == "Linux"
+  apt: name=spotify-client update_cache=yes cach_valid_time=3600 state=latest
+
+- name: ensure Spotify is the latest
+  when: ansible_system == "Darwin"
+  homebrew_cask: name=spotify state=present
+  ignore_errors: yes
