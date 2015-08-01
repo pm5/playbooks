@@ -2,9 +2,9 @@
 - hosts: localhost
   roles:
     - macbook
+    - syncthing
     - nodejs
     - python
     - ruby
     #- php
     #- haskell
-    - syncthing
