@@ -5,7 +5,7 @@
   with_items:
     - syncthing
     #- syncthing-bar
-  when: ansible_system == "Darwin"
+  when: ansible_os_family == "Darwin"
 
 - name: ensure Syncthing launchd configuration is present
   file: src=/usr/local/opt/syncthing/homebrew.mxcl.syncthing.plist dest=~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist state=link
