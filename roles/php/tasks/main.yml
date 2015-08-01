@@ -16,16 +16,16 @@
   when: phpbrew.changed
 
 - name: ensure Homebrew Dupes is tapped
-  when: os_family == "OSX"
+  when: ansible_os_family == "Darwin"
   homebrew_tap: tap=homebrew/dupes state=present
 
 - name: ensure Homebrew dependencies are the latest
-  when: os_family == "OSX"
+  when: ansible_os_family == "Darwin"
   homebrew: name=zlib state=latest
 
 - name: ensure neede Homebrew packages are linked
   homebrew: name={{ item }} state=linked
-  when: os_family == "OSX"
+  when: ansible_os_family == "Darwin"
   with_items:
     - openssl
     - curl
