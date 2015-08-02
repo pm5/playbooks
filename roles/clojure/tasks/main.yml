@@ -1,0 +1,4 @@
+---
+- name: ensure leiningen is the latest
+  when: ansible_os_family == "Darwin"
+  homebrew: name=leiningen state=latest
