@@ -1,0 +1,6 @@
+---
+- name: ensure blender is the latest
+  when: ansible_os_family == "Darwin"
+  homebrew_cask: name={{ item }}
+  with_items:
+    - blender
