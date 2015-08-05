@@ -41,6 +41,7 @@
     - fortune
     - git
     - git-annex
+    - git-subtree
     - gnupg
     - graphicsmagick
     - hub
