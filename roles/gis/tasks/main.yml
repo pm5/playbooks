@@ -15,4 +15,4 @@
     - simplify-geojson
     - geojsonio-cli
     - csv2geojson
-    - overpass-query
+    - query-overpass
