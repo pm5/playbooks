@@ -1,0 +1,4 @@
+---
+- name: ensure Go environment is the latest
+  when: ansible_os_family == "Darwin"
+  homebrew_cask: name=go
