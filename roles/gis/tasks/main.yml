@@ -1,0 +1,18 @@
+---
+- name: ensure Homebrew Cask packages are the latest
+  when: ansible_os_family == "Darwin"
+  homebrew_cask: name={{ item }} state=present
+  ignore_errors: yes
+  with_items:
+    - qgis
+    - josm
+    - tilemill
+
+- name: ensure npm packages are the latest
+  npm: name={{ item }} global=yes state=latest
+  with_items:
+    - topojson
+    - simplify-geojson
+    - geojsonio-cli
+    - csv2geojson
+    - overpass-query
