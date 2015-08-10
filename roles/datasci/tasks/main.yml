@@ -1,0 +1,12 @@
+---
+- name: ensure Homebrew packages are the latest
+  homebrew: name={{ item }} state=latest
+  ignore_errors: yes
+  with_items:
+    - pdftohtml
+
+- name: ensure Homebrew Cask packages are the latest
+  homebrew_cask: name={{ item }} state=present
+  ignore_errors: yes
+  with_items:
+    - tabula
