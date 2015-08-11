@@ -16,3 +16,4 @@
     - cloudflare-cli
     - statuscake-cli
     - standard
+    - caniuse-cmd
