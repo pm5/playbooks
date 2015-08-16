@@ -2,11 +2,12 @@
 - hosts: localhost
   roles:
     - macbook
+    - vim
     - syncthing
     - nodejs
     - python
     - ruby
-    #- php
+    - php
     - haskell
     - golang
     - blender

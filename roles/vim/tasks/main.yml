@@ -1,0 +1,10 @@
+---
+- name: ensure macvim is the latest
+  when: ansible_os_family == "Darwin"
+  homebrew_cask: name=macvim
+
+- name: ensure fzf is the latest
+  git: repo=https://github.com/junegunn/fzf.git clone=yes dest={{ ansible_env.HOME }}/.fzf depth=1
+
+- name: ensure fzf is installed
+  command: "{{ ansible_env.HOME }}/.fzf/install chdir={{ ansible_env.HOME }} creates={{ ansible_env.HOME }}/.fzf.bash"
