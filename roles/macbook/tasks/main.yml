@@ -39,6 +39,7 @@
     - espeak
     - ffmpeg
     - fortune
+    - fzf
     - git
     - git-annex
     - git-subtree

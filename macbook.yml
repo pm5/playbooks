@@ -7,6 +7,9 @@
     - python
     - ruby
     #- php
-    #- haskell
+    - haskell
+    - golang
     - blender
     - photo
+    - gis
+    - datasci
