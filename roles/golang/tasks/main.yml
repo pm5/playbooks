@@ -2,3 +2,7 @@
 - name: ensure Go environment is the latest
   when: ansible_os_family == "Darwin"
   homebrew_cask: name=go
+
+- name: ensure Vim environment for Go is present
+  command: vim +GoInstallBinaries +q!
+  ignore_errors: yes
