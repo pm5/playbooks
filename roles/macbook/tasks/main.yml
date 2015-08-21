@@ -107,7 +107,6 @@
     - gog-downloader
     - google-chrome-canary
     - google-earth-pro
-    - google-refine
     - gpgtools
     - img2icns
     - iterm2
@@ -118,6 +117,7 @@
     - nally
     - ngrok
     - nocturne
+    - openrefine
     - quicksilver
     - rowanj-gitx
     - sequel-pro
