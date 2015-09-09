@@ -18,4 +18,4 @@
     - standard
     - caniuse-cmd
     - bower
-    - livereload
+    - live-server
