@@ -78,6 +78,9 @@
     - w3m
     - webp
     - wget
+    - mysql
+    - posgresql
+    - mongodb
 
 - name: ensure Homebrew Cask is the latest
   homebrew: name=caskroom/cask/brew-cask state=latest
