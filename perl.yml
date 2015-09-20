@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  tasks:
+    - name: ensure Perlbrew is the latest
+      shell: curl -L http://install.perlbrew.pl | bash
+
+    - name: ensure Perlbrew is initialized
+      shell: source ~/.bashrc && perlbrew init
+
+    - name: ensure Perlbrew is the latest
+      shell: source ~/.bashrc && perlbrew self-upgrade
+
+    - name: ensure Perl 5.22 is present
+      shell: source ~/.bashrc && perlbrew install 5.22.0
+      ignore_errors: yes
+
+    - name: ensure Perl 5.22 is used
+      shell: source ~/.bashrc && perlbrew switch perl-5.22.0
+
+    - name: ensure Perl 5.22 is the latest
+      shell: source ~/.bashrc && perlbrew upgrade-perl
+
+    - name: ensure cpanm is installed
+      shell: source ~/.bashrc && perlbrew install-cpanm

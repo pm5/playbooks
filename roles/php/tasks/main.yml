@@ -1,19 +1,14 @@
 ---
-- name: ensure Phpbrew is present
-  get_url: dest=~/bin/phpbrew url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew force=yes
+- name: ensure PHPBrew is present
+  get_url: dest=~/bin/phpbrew url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew mode=0755
   register: phpbrew
 
-- name: ensure Phpbrew just downloaded is executable
-  shell: chmod 700 ~/bin/phpbrew
-  when: phpbrew.changed
-
-- name: ensure Phpbrew is the latest
+- name: ensure PHPBrew is the latest
   shell: phpbrew self-update
 
-- name: ensure Phpbrew environment is initialized
-  shell: phpbrew init
+- name: ensure PHPBrew environment is initialized
+  shell: phpbrew init creates=~/.phpbrew/init
   ignore_errors: yes
-  when: phpbrew.changed
 
 - name: ensure Homebrew Dupes is tapped
   when: ansible_os_family == "Darwin"
@@ -21,25 +16,34 @@
 
 - name: ensure Homebrew dependencies are the latest
   when: ansible_os_family == "Darwin"
-  homebrew: name=zlib state=latest
-
-- name: ensure neede Homebrew packages are linked
-  homebrew: name={{ item }} state=linked
-  when: ansible_os_family == "Darwin"
+  homebrew: name={{ item }} state=latest
   with_items:
     - openssl
     - curl
     - readline
     - zlib
 
-- name: ensure PHP 5.5.x is the latest
-  shell: phpbrew install 5.5 +default +fpm -- --with-openssl=/usr/local --without-bz2
+# openssl
+- name: ensure Homebrew dependencies are linked
+  when: ansible_os_family == "Darwin"
+  shell: brew link {{ item }} --force
+  #homebrew: name={{ item }} state=linked install_options=--force
+  with_items:
+    - openssl
+    - curl
+    - readline
+    - zlib
 
-- name: ensure PHP 5.5.x is used by default
-  shell: source ~/.phpbrew/bashrc && phpbrew switch 5.5
+- name: ensure PHP {{ phpbrew_php_version }} is the latest
+  shell: phpbrew install {{ phpbrew_php_version }} +default +fpm -- --with-openssl=/usr/local --without-bz2
+  args:
+    creates: ~/.phpbrew/php/php-{{ phpbrew_php_version }}
 
-- name: ensure composer are present
+- name: ensure PHP {{ phpbrew_php_version }} is used by default
+  shell: source ~/.phpbrew/bashrc && phpbrew switch $(phpbrew list | grep php | head -n 1)
+
+- name: ensure composer is the latest
   shell: source ~/.phpbrew/bashrc && phpbrew install-composer
 
-- name: ensure phpunit are present
+- name: ensure phpunit is the latest
   shell: source ~/.phpbrew/bashrc && phpbrew install-phpunit
