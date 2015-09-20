@@ -1,16 +1,16 @@
 ---
 - hosts: localhost
   roles:
-    #- macbook
-    #- vim
-    #- syncthing
-    #- nodejs
-    #- python
-    #- ruby
+    - macbook
+    - vim
+    - syncthing
+    - nodejs
+    - python
+    - ruby
     - php
-    #- haskell
-    #- golang
-    #- blender
-    #- photo
-    #- gis
-    #- datasci
+    - haskell
+    - golang
+    - blender
+    - photo
+    - gis
+    - datasci
