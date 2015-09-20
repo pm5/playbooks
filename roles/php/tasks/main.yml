@@ -10,6 +10,9 @@
   shell: phpbrew init creates=~/.phpbrew/init
   ignore_errors: yes
 
+- name: ensure PHPBrew know versions are the latest
+  shell: phpbrew update
+
 - name: ensure Homebrew Dupes is tapped
   when: ansible_os_family == "Darwin"
   homebrew_tap: tap=homebrew/dupes state=present
@@ -23,7 +26,7 @@
     - readline
     - zlib
 
-# openssl
+# keg-only packages need to be forcely linked
 - name: ensure Homebrew dependencies are linked
   when: ansible_os_family == "Darwin"
   shell: brew link {{ item }} --force
