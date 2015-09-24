@@ -66,6 +66,7 @@
     - openssl
     - pdftohtml
     - pkg-config
+    - proj
     - pwgen
     - readline
     - reattach-to-user-namespace
