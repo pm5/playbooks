@@ -64,6 +64,7 @@
     - nmap
     - offline-imap
     - openssl
+    - pandoc
     - pdftohtml
     - pkg-config
     - proj
