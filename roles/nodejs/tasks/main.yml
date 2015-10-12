@@ -19,3 +19,4 @@
     - caniuse-cmd
     - bower
     - live-server
+    - localtunnel
