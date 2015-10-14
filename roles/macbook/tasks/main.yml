@@ -73,6 +73,7 @@
     - reattach-to-user-namespace
     - remind
     - rename
+    - sl
     - sqlite
     - tig
     - tmux
@@ -87,9 +88,6 @@
 
 - name: ensure Homebrew Cask is the latest
   homebrew: name=caskroom/cask/brew-cask state=latest
-
-- name: ensure Homebrew Cask is tapped to caskroom/versions
-  homebrew_tap: tap=caskroom/versions state=present
 
 - name: ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
