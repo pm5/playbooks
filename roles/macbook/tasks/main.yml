@@ -36,6 +36,7 @@
     - ctags
     - curl
     - dict
+    - docker-machine
     - espeak
     - ffmpeg
     - fortune
