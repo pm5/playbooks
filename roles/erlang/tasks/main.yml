@@ -3,4 +3,7 @@
   shell: brew -v
 
 - name: ensure Erlang Homebrew package is the latest
-  homebrew: name=erlang state=latest
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - erlang
+    - rebar
