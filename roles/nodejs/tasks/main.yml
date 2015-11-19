@@ -11,7 +11,7 @@
     - jade
     - stylus
     - livescript
-    - babel
+    - babel-cli
     - http-server
     - cloudflare-cli
     - statuscake-cli
