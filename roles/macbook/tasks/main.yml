@@ -28,6 +28,7 @@
     - ack
     - autoconf
     - automake
+    - aspell
     - bash-completion
     - bvi
     - cmake
