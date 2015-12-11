@@ -37,7 +37,6 @@
     - ctags
     - curl
     - dict
-    - docker-machine
     - espeak
     - ffmpeg
     - fortune
@@ -106,6 +105,7 @@
     - color-oracle
     - colors
     - disk-inventory-x
+    - dockertoolbox
     - dropbox
     - evernote
     - filezilla
