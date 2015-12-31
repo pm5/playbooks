@@ -13,12 +13,12 @@
     - livescript
     - babel-cli
     - http-server
-    - cloudflare-cli
-    - statuscake-cli
-    - standard
-    - caniuse-cmd
-    - bower
+    - serve
     - live-server
     - localtunnel
-    - moretext
+    - standard
+    - cloudflare-cli
+    - statuscake-cli
     - geojsonio-cli
+    - caniuse-cmd
+    - moretext
