@@ -12,6 +12,7 @@
     - stylus
     - livescript
     - babel-cli
+    - eslint-cli
     - http-server
     - serve
     - live-server
