@@ -13,6 +13,7 @@
     - livescript
     - babel-cli
     - eslint-cli
+    - jscs
     - http-server
     - serve
     - live-server
