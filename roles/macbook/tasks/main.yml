@@ -67,6 +67,7 @@
     - offline-imap
     - openssl
     - pandoc
+    - parallel
     - pdftohtml
     - pkg-config
     - proj
