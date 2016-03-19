@@ -89,6 +89,7 @@
     - mysql
     - posgresql
     - mongodb
+    - phantomjs
 
 - name: ensure Homebrew Cask is the latest
   homebrew: name=caskroom/cask/brew-cask state=latest
