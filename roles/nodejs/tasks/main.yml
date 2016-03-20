@@ -1,12 +1,12 @@
 ---
-- name: Install nvm if it is not installed yet.
+- name: Install or update nvm to the latest version.
   git: repo=https://github.com/creationix/nvm.git dest=~/.nvm update=yes
 
 - name: Ensure default Node.js version is the latest stable.
   shell: source $HOME/.nvm/nvm.sh && nvm install stable && nvm alias default stable
 
-- name: Ensure global npm tools are the latest.
-  npm: name={{ item }} executable="~/.nvm/nvm-exec npm" global=yes state=latest
+- name: Ensure global Node.js tools are the up-to-date.
+  shell: source $HOME/.nvm/nvm.sh && nvm exec stable npm install -g {{ item }}
   with_items:
     - jade
     - stylus
