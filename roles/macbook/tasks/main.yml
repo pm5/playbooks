@@ -87,7 +87,7 @@
     - webp
     - wget
     - mysql
-    - posgresql
+    - postgresql
     - mongodb
     - phantomjs
 
