@@ -34,4 +34,4 @@
     creates: ~/bin/composer.phar
 
 - name: Ensure Composer is updated.
-  shell: composer.phar self-update.
+  shell: composer.phar self-update
