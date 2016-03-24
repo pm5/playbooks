@@ -118,6 +118,7 @@
     - google-cloud-sdk
     - google-chrome-canary
     - google-earth-pro
+    - google-refine
     - gpgtools
     - img2icns
     - iterm2
@@ -125,14 +126,12 @@
     - karabiner
     - libreoffice
     - licecap
-    - macdown
     - mongohub
     - nally
     - ngrok
     - nocturne
-    - openrefine
     - opera
-    - psequal
+    - psequel
     - quicksilver
     - rowanj-gitx
     - sequel-pro

@@ -13,7 +13,6 @@
   with_items:
     - qgis
     - josm
-    - gdal
     - tilemill
 
 - name: ensure npm packages are the latest
