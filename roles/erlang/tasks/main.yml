@@ -6,4 +6,5 @@
   homebrew: name={{ item }} state=latest
   with_items:
     - erlang
+    - elixir
     - rebar
