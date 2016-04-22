@@ -8,7 +8,7 @@
 - name: Ensure global Node.js tools are the up-to-date.
   shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm exec stable npm install -g {{ item }}
   with_items:
-    - pug
+    - pug-cli
     - stylus
     - babel-cli
     - eslint-cli
