@@ -10,7 +10,6 @@
   with_items:
     - pug
     - stylus
-    - livescript
     - babel-cli
     - eslint-cli
     - jscs
