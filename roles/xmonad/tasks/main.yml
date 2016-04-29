@@ -1,0 +1,13 @@
+---
+- name: Ensure XMonad packages are the latest.
+  apt: name={{ item }} state=latest cache_valid_time=86400
+  with_items:
+    - xmonad
+    - libghc-xmonad-contrib-dev
+    - sakura
+    - tmux
+    - xmobar
+    - trayer
+    - xscreensaver
+    - xloadimage
+    - suckless-tools
