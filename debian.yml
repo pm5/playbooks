@@ -1,6 +1,9 @@
 ---
 - hosts: localhost
-  sudo: yes
+  become: yes
   roles:
     - debian
     - vim
+    - nodejs
+    - python
+    - ruby
