@@ -15,7 +15,7 @@ ANSIBLE_PLAYBOOKS_DIRECTORY=$(pwd)
 mkdir -p $SRC_DIRECTORY
 
 source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ssh-key
-source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/pyenv
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/python
 source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ansible
 source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ansible-playbooks
 
