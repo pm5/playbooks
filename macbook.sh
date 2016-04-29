@@ -14,11 +14,12 @@ ANSIBLE_PLAYBOOKS_DIRECTORY="$SRC_DIRECTORY/ansible-playbooks"
 
 mkdir -p $SRC_DIRECTORY
 
-source ./bootstrap.d/xcode
-source ./bootstrap.d/homebrew
-source ./bootstrap.d/pyenv
-source ./bootstrap.d/ansible
-source ./bootstrap.d/ansible-playbooks
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ssh-key
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/xcode
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/homebrew
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/pyenv
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ansible
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap.d/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
