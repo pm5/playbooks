@@ -21,8 +21,8 @@ mkdir -p $SRC_DIRECTORY
 #
 #source ./bootstrap.d/pyenv
 sudo apt-get install -y python-six python-paramiko python-yaml python-jinja2 python-httplib2
-source ./bootstrap.d/ansible
-source ./bootstrap.d/ansible-playbooks
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible
+source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
