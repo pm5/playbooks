@@ -41,7 +41,6 @@
     - gist
     - git
     - git-annex
-    - git-subtree
     - gnupg
     - graphicsmagick
     - graphviz
@@ -102,9 +101,9 @@
     - colors
     - disk-inventory-x
     - dockertoolbox
-    - dropbox
     - evernote
     - filezilla
+    - firefox
     - firefoxdeveloperedition
     - free-ruler
     - freemind
