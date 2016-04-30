@@ -1,0 +1,5 @@
+---
+- name: Ensure VIM packages are the latest.
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - vim
