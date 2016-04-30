@@ -4,12 +4,15 @@
   when: not hostname
 
 - name: ensure hostname is {{hostname}}
+  become: yes
   shell: scutil --set HostName {{hostname}}
 
 - name: ensure localhostname is {{hostname}}
+  become: yes
   shell: scutil --set LocalHostName {{hostname}}
 
 - name: ensure computer name is {{hostname}}
+  become: yes
   shell: scutil --set ComputerName {{hostname}}
 
 - name: ensure Homebrew is tapped to homebrew/completions
