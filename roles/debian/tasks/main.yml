@@ -4,5 +4,4 @@
   when: not hostname
 
 - name: ensure hostname is set
-  sudo: yes
   lineinfile: regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{hostname}}"
