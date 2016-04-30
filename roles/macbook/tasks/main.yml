@@ -91,9 +91,6 @@
     - mongodb
     - phantomjs
 
-- name: ensure Homebrew Cask is the latest
-  homebrew: name=caskroom/cask/brew-cask state=latest
-
 - name: ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
   ignore_errors: yes
