@@ -40,7 +40,6 @@
     - espeak
     - ffmpeg
     - fortune
-    - fzf
     - gist
     - git
     - git-annex
