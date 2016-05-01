@@ -1,0 +1,7 @@
+---
+- name: Ensure Erlang Homebrew package is the latest
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - erlang
+    - elixir
+    - rebar
