@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
-  become: yes
   roles:
     - debian
     - vim
     - xmonad
     - webdev
+    - nodejs
     - haskell
     - erlang
