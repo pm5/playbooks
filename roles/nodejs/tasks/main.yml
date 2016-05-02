@@ -1,12 +1,19 @@
 ---
-- name: Install or update nvm to the latest version.
-  git: repo=https://github.com/creationix/nvm.git dest=~/.nvm update=yes
+- name: Ensure nvm is the latest.
+  become: no
+  git: repo=https://github.com/creationix/nvm.git dest={{ ansible_env.HOME }}/.nvm clone=yes update=yes
 
-- name: Ensure default Node.js version is the latest stable.
+- name: Ensure default Node.js is the latest stable.
+  become: no
   shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install stable && nvm alias default stable
+  args:
+    executable: /bin/bash
 
-- name: Ensure global Node.js tools are the up-to-date.
+- name: Ensure Node.js tools are the latest.
+  become: no
   shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm exec stable npm install -g {{ item }}
+  args:
+    executable: /bin/bash
   with_items:
     - pug-cli
     - stylus
