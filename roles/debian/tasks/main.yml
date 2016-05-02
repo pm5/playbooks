@@ -34,27 +34,26 @@
     - graphicsmagick
     - graphviz
     - imagemagick
-    - jpeg
+    - jpeginfo
     - jq
     - ledger
-    - lorem
     - mcrypt
     - mercurial
-    - mhash
     - mosh
     - mr
     - msmtp
     - mutt
     - ncftp
     - nmap
-    - offline-imap
+    - offlineimap
     - openssl
     - pandoc
     - pdftohtml
     - pkg-config
-    - proj
+    - proj-bin
+    - proj-data
     - pwgen
-    - readline
+    - libreadline-dev
     - remind
     - rename
     - sqlite
