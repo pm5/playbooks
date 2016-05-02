@@ -1,7 +1,69 @@
 ---
-- name: ensure hostname var is defined
+- name: Ensure hostname variable is defined.
   command: "false"
   when: not hostname
 
-- name: ensure hostname is set
-  lineinfile: regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{hostname}}"
+- name: Ensure hostname in /etc/hosts is set.
+  become: yes
+  lineinfile: regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{ hostname }}"
+
+- name: Ensure hostname is set.
+  hostname: name={{ hostname }}
+
+- name: Ensure APT packages are the latest.
+  apt: name={{ item }} state=latest cache_valid_time=86400
+  become: yes
+  with_items:
+    - ack-grep
+    - autoconf
+    - automake
+    - aspell
+    - bash-completion
+    - cmake
+    - cscope
+    - ctags
+    - curl
+    - dict
+    - espeak
+    - ffmpeg
+    - fortune
+    - gist
+    - git
+    - git-annex
+    - gnupg
+    - graphicsmagick
+    - graphviz
+    - imagemagick
+    - jpeg
+    - jq
+    - ledger
+    - lorem
+    - mcrypt
+    - mercurial
+    - mhash
+    - mosh
+    - mr
+    - msmtp
+    - mutt
+    - ncftp
+    - nmap
+    - offline-imap
+    - openssl
+    - pandoc
+    - pdftohtml
+    - pkg-config
+    - proj
+    - pwgen
+    - readline
+    - remind
+    - rename
+    - sqlite
+    - tig
+    - tmux
+    - tree
+    - unrar
+    - w3m
+    - webp
+    - wget
+    - mongodb
+    #- hub
