@@ -15,17 +15,21 @@
   become: yes
   with_items:
     - ack-grep
+    - aspell
     - autoconf
     - automake
-    - aspell
     - bash-completion
+    - calibre
+    - chromium
     - cmake
     - cscope
     - ctags
     - curl
     - dict
+    #- dockertoolbox
     - espeak
     - ffmpeg
+    - firefox
     - fortune
     - gist
     - git
@@ -33,17 +37,21 @@
     - gnupg
     - graphicsmagick
     - graphviz
+    #- hub
     - imagemagick
     - jpeginfo
     - jq
     - ledger
+    - libreadline-dev
     - mcrypt
     - mercurial
+    - mongodb
     - mosh
     - mr
     - msmtp
     - mutt
     - ncftp
+    - ngrok
     - nmap
     - offlineimap
     - openssl
@@ -53,7 +61,6 @@
     - proj-bin
     - proj-data
     - pwgen
-    - libreadline-dev
     - remind
     - rename
     - sqlite
@@ -61,9 +68,10 @@
     - tmux
     - tree
     - unrar
+    - vlc
     - w3m
     - webp
     - wget
-    - mongodb
+    - wireshark
     #- hub
     - https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
