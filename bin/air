@@ -21,4 +21,4 @@ source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible-playbooks
 
 echo "Provision with Ansible"
 cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
-ansible-playbook debian.yml -e "hostname=${1}"
+ansible-playbook playbooks/debian.yml -e "hostname=${1}"

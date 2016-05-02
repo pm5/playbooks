@@ -26,4 +26,4 @@ source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook tvbox.yml --ask-become-pass -e "hostname=$1"
+ansible-playbook playbooks/tvbox.yml --ask-become-pass -e "hostname=$1"
