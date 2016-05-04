@@ -20,7 +20,7 @@
     - automake
     - bash-completion
     - calibre
-    - chromium
+    - chromium-browser
     - cmake
     - cscope
     - ctags
@@ -51,7 +51,7 @@
     - msmtp
     - mutt
     - ncftp
-    - ngrok
+    #- ngrok
     - nmap
     - offlineimap
     - openssl
@@ -73,5 +73,6 @@
     - webp
     - wget
     - wireshark
+    - xclip
     #- hub
     - https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
