@@ -5,7 +5,7 @@
 
 - name: Ensure hostname in /etc/hosts is set.
   become: yes
-  lineinfile: regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{ hostname }}"
+  lineinfile: 'regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{ hostname }}"'
 
 - name: Ensure hostname is set.
   hostname: name={{ hostname }}
@@ -66,3 +66,4 @@
     - wget
     - mongodb
     #- hub
+    - https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
