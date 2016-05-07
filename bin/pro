@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ "${1}" == "" ]]; then
+HOSTNAME=${1:-$(hostname)}
+
+if [[ "${HOSTNAME}" == "" ]]; then
     echo "Usage: pro <hostname>"
     exit -1
 fi
@@ -22,4 +24,4 @@ source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible-playbooks
 
 echo "Provision with Ansible"
 cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
-ansible-playbook playbooks/macbook.yml -e "hostname=${1}"
+ansible-playbook playbooks/macbook.yml -e "hostname=${HOSTNAME}"

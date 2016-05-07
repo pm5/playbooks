@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ "$1" == "" ]]; then
+HOSTNAME=${1:-$(hostname)}
+
+if [[ "${HOSTNAME}" == "" ]]; then
     echo "Usage: tvbox <hostname>"
     exit -1
 fi
@@ -26,4 +28,4 @@ source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ansible-playbooks
 
 echo "Provision with Ansible"
 cd $ANSIBLE_PLAYBOOKS_DIRECTORY
-ansible-playbook playbooks/tvbox.yml --ask-become-pass -e "hostname=$1"
+ansible-playbook playbooks/tvbox.yml --ask-become-pass -e "hostname=${HOSTNAME}"
