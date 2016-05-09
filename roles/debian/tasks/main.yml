@@ -58,6 +58,7 @@
     - pandoc
     - pdftohtml
     - pkg-config
+    - pngquant
     - proj-bin
     - proj-data
     - pwgen
