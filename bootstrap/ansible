@@ -1,10 +1,13 @@
-if [[ ! -d $ANSIBLE_DIRECTORY ]]; then
+ANSIBLE_VERSION=origin/devel
+
+if [[ ! -d ${ANSIBLE_DIRECTORY} ]]; then
     echo "Install Ansible"
-    git clone git://github.com/ansible/ansible.git --recursive $ANSIBLE_DIRECTORY
+    git clone git://github.com/ansible/ansible.git --recursive ${ANSIBLE_DIRECTORY}
 fi
 
 cd $ANSIBLE_DIRECTORY
-git pull
+git fetch
+git checkout -f ${ANSIBLE_VERSION}
 git submodule update
 
-source $ANSIBLE_DIRECTORY/hacking/env-setup
+source ${ANSIBLE_DIRECTORY}/hacking/env-setup
