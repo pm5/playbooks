@@ -30,3 +30,4 @@
     - geojsonio-cli
     - caniuse-cmd
     - moretext
+    - js-beautify
