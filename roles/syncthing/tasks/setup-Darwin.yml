@@ -1,0 +1,13 @@
+---
+- name: Ensure Syncthing Homebrew package is the latest.
+  homebrew: name={{ item }} state=latest
+  ignore_errors: yes
+  with_items:
+    - syncthing
+    #- syncthing-bar
+
+- name: Ensure Syncthing launchd configuration is present.
+  file: src=/usr/local/opt/syncthing/homebrew.mxcl.syncthing.plist dest=~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist state=link
+
+- name: Ensure Syncthing is kept running.
+  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist

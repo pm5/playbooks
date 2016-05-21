@@ -1,0 +1,14 @@
+---
+- name: Ensure Syncthing APT release key is present.
+  apt_key: url=https://syncthing.net/release-key.txt
+  become: yes
+
+- name: Ensure Syncthing APT repository is present.
+  apt_repository: repo='deb http://apt.syncthing.net/ syncthing release'
+  become: yes
+
+- name: Ensure Syncthing APT package is the latest.
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=86400
+  become: yes
+  with_items:
+    - syncthing
