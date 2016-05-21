@@ -3,15 +3,15 @@
   become: no
   git: repo=https://github.com/creationix/nvm.git dest={{ ansible_env.HOME }}/.nvm clone=yes update=yes
 
-- name: Ensure default Node.js is the latest stable.
+- name: Ensure default Node.js is the latest {{ nodejs_version }}.
   become: no
-  shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install stable && nvm alias default stable
+  shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ nodejs_version }} && nvm alias default {{ nodejs_version }}
   args:
     executable: /bin/bash
 
 - name: Ensure Node.js tools are the latest.
   become: no
-  shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm exec stable npm install -g {{ item }}
+  shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm exec {{ nodejs_version }} npm install -g {{ item }}
   args:
     executable: /bin/bash
   with_items:
