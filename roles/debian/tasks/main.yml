@@ -76,4 +76,9 @@
     - wireshark
     - xclip
     #- hub
+
+- name: Ensure APT 3rd party packages are the installed.
+  apt: deb={{ item }} state=present
+  become: yes
+  with_items:
     - https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
