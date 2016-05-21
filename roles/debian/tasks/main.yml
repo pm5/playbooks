@@ -8,13 +8,15 @@
   lineinfile: 'regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{ hostname }}"'
 
 - name: Ensure hostname is set.
+  become: yes
   hostname: name={{ hostname }}
 
 - name: Ensure APT packages are the latest.
-  apt: name={{ item }} state=latest cache_valid_time=86400
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=86400
   become: yes
   with_items:
     - ack-grep
+    - aptitude
     - aspell
     - autoconf
     - automake
@@ -76,6 +78,10 @@
     - wireshark
     - xclip
     #- hub
+
+- name: Ensure Deiabn system is upgraded.
+  become: yes
+  apt: update_cache=yes upgrade=yes cache_valid_time=86400
 
 - name: Ensure APT 3rd party packages are the installed.
   apt: deb={{ item }} state=present
