@@ -1,5 +1,5 @@
 ---
-- include: setup-{{ ansible_system }}.yml
+- include: setup-{{ ansible_os_family }}.yml
 
 - name: Ensure FZF is the latest
   become: no
