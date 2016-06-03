@@ -1,2 +1,6 @@
 ---
 - include: setup-{{ ansible_os_family }}.yml
+
+- name: Ensure Cabal packages are updated.
+  become: no
+  shell: cabal update
