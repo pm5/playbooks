@@ -1,6 +1,6 @@
 ---
 - name: Ensure PHPBrew is present.
-  get_url: dest=~/bin/phpbrew url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew mode=0755
+  get_url: url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew mode=0755 dest=~/bin/phpbrew
   register: phpbrew
 
 - name: Ensure PHPBrew is initialized.
@@ -12,25 +12,22 @@
 - name: Ensure PHPBrew known versions are updated.
   shell: phpbrew update
 
-- name: Check the latest known PHP version
-  shell: phpbrew known | head -n 1 | awk '{print $2}' | sed 's/,//g'
-  register: phpbrew_php_version
-
 - name: Ensure build environment is set.
   include: setup-Darwin.yml
   when: ansible_os_family == "Darwin"
 
-- name: Ensure PHP {{ phpbrew_php_version.stdout }} is the present.
-  shell: phpbrew install {{ phpbrew_php_version.stdout }} +default +fpm -- --with-openssl=/usr/local --without-bz2
+- name: Ensure PHP {{ phpbrew_php_version }} is the present.
+  shell: phpbrew install {{ phpbrew_php_version }} +default +fpm -- --with-openssl=/usr/local/opt/openssl --without-bz2
   args:
-    creates: ~/.phpbrew/php/php-{{ phpbrew_php_version.stdout }}
+    creates: ~/.phpbrew/php/php-{{ phpbrew_php_version }}
 
-- name: Ensure PHP {{ phpbrew_php_version.stdout }} is the default.
-  shell: source ~/.phpbrew/bashrc && phpbrew switch $(phpbrew list | grep php | head -n 1)
+- name: Ensure PHP {{ phpbrew_php_version }} is the default.
+  shell: source ~/.phpbrew/bashrc && phpbrew switch {{ phpbrew_php_version }}
 
 - name: Ensure Composer is present.
-  shell: (curl -sS https://getcomposer.org/installer | php) && mv composer.phar $HOME/bin
+  shell: curl -sS https://getcomposer.org/installer | (source ~/.phpbrew/bashrc && php)
   args:
+    chdir: ~/bin
     creates: ~/bin/composer.phar
 
 - name: Ensure Composer is updated.
