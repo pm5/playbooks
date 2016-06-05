@@ -1,18 +1,12 @@
 #!/bin/bash
 
 HOSTNAME=${1:-$(hostname)}
-
-if [[ "${HOSTNAME}" == "" ]]; then
-    echo "Usage: pro <hostname>"
-    exit -1
-fi
-
-set -e
-
 SRC_DIRECTORY="${HOME}/src"
 LIB_DIRECTORY="${HOME}/lib"
 ANSIBLE_DIRECTORY="${LIB_DIRECTORY}/ansible"
 ANSIBLE_PLAYBOOKS_DIRECTORY="${SRC_DIRECTORY}/ansible-playbooks"
+
+set -e
 
 echo "Bootstrap Ansible"
 source ${ANSIBLE_PLAYBOOKS_DIRECTORY}/bootstrap/ssh-key
