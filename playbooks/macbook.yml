@@ -2,6 +2,10 @@
 - hosts: localhost
   vars:
     phpbrew_php_version: 7.0.7
+    python_versions:
+      - 2.7.10
+      - 3.6.0a1
+    python_global_version: 3.6.0a1
   roles:
     - darwin
     - vim
