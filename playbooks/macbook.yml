@@ -4,7 +4,7 @@
     phpbrew_php_version: 7.0.7
     python_versions:
       - 2.7.10
-      - 3.6.0a1
+      - 3.5.0
     python_global_version: 3.6.0a1
   roles:
     - darwin
@@ -16,6 +16,7 @@
     - php
     - haskell
     - golang
+    - math
     - 2dgraphic
     - photo
     - cloud
