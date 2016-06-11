@@ -1,5 +1,5 @@
 ---
 - name: Ensure Cloud tools are the latest.
-  brew: name={{ item }} state=latest
+  homebrew: name={{ item }} state=latest
   with_items:
     - awscli
