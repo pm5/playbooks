@@ -21,6 +21,7 @@
     - autoconf
     - automake
     - bash-completion
+    - bzr
     - calibre
     - chromium-browser
     - cmake
