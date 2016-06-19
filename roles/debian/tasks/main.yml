@@ -16,6 +16,7 @@
   become: yes
   with_items:
     - ack-grep
+    - acpi
     - aptitude
     - aspell
     - autoconf
