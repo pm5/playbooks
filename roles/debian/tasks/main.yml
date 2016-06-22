@@ -92,3 +92,20 @@
   become: yes
   with_items:
     - https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
+
+- name: Telegram - check
+  file: dest=~/bin/telegram state=file
+  ignore_errors: yes
+  register: telegram
+
+- name: Telegram - download
+  get_url: url=https://telegram.org/dl/desktop/linux dest=~/tmp/Telegram.tar.xz
+  when: telegram|failed
+
+- name: Telegram - extract
+  unarchive: dest=~/tmp src=~/tmp/Telegram.tar.xz copy=no
+  when: telegram|failed
+
+- name: Telegram - copy
+  command: cp ~/tmp/Telegram/Telegram ~/bin/telegram
+  when: telegram|failed
