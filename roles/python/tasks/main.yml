@@ -1,4 +1,6 @@
 ---
+- include: setup-{{ ansible_os_family }}.yml
+
 - name: Ensure pyenv is the latest.
   git: repo=https://github.com/yyuu/pyenv.git clone=yes dest=~/.pyenv update=yes
 
@@ -17,3 +19,4 @@
     - autopep8
     - ipython
     - pytest
+    - virtualenv

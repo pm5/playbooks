@@ -1,0 +1,3 @@
+---
+- name: Ensure build dependencies are the laste
+  homebrew: name=readline state=latest
