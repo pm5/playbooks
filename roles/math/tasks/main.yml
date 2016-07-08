@@ -1,19 +1,24 @@
 ---
-- name: ensure packages are the latest
+- name: Ensure packages are the latest.
   when: ansible_os_family == "Darwin"
   homebrew_cask: name={{ item }}
   with_items:
     - sage
     - basictex
 
-- name: Ensure Python tools are the latest
+- name: Ensure Python tools are the latest.
   pip: name={{ item }} state=latest
   with_items:
     - numpy
     - scipy
     - ipython
 
-- name: ensure packages are the latest
+- name: Ensure Jupyter are the latest.
+  pip: name={{ item }} state=latest
+  with_items:
+    - jupyter
+
+- name: Ensure packages are the latest.
   when: ansible_os_family == "Debian"
   apt: name={{ item }} update_cache=yes cache_valid_time=86400
   with_items:
