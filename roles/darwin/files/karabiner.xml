@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>Forward Delete to Backquote</name>
-    <identifier>private.forward_delete_to_backquote</identifier>
-    <autogen>__KeyToKey__ KeyCode::FORWARD_DELETE, KeyCode::BACKQUOTE</autogen>
+    <name>Control_R to Backquote(`)</name>
+    <identifier>private.ctrl_r_to_backquote</identifier>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::BACKQUOTE</autogen>
   </item>
 </root>
