@@ -26,9 +26,9 @@
   ignore_errors: yes
   with_items:
     - ack
+    - aspell
     - autoconf
     - automake
-    - aspell
     - bash-completion
     - bvi
     - bzr
@@ -58,9 +58,11 @@
     - mercurial
     - mhash
     - mobile-shell
+    - mongodb
     - mr
     - msmtp
     - mutt
+    - mysql
     - ncftp
     - nmap
     - offline-imap
@@ -68,11 +70,15 @@
     - pandoc
     - parallel
     - pdftohtml
+    - phantomjs
     - pkg-config
+    - postgresql
     - proj
     - pwgen
+    - rabbitmq
     - readline
     - reattach-to-user-namespace
+    - redis
     - remind
     - rename
     - sl
@@ -84,10 +90,6 @@
     - w3m
     - webp
     - wget
-    - mysql
-    - postgresql
-    - mongodb
-    - phantomjs
 
 - name: ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
