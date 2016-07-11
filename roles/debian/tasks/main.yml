@@ -36,6 +36,7 @@
     - ffmpeg
     - firefox
     - fortune
+    - fonts-opendyslexic
     - gist
     - git
     - git-annex
@@ -82,6 +83,7 @@
     - wireshark
     - xbacklight
     - xclip
+    - whois
     #- hub
 
 - name: Ensure Deiabn system is upgraded.
