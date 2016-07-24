@@ -31,3 +31,4 @@
     - caniuse-cmd
     - moretext
     - js-beautify
+    - node-inspector
