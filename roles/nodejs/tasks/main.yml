@@ -32,3 +32,5 @@
     - moretext
     - js-beautify
     - node-inspector
+    - shelljs
+    - shx
