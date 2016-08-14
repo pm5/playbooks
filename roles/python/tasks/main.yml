@@ -20,3 +20,4 @@
     - ipython
     - pytest
     - virtualenv
+    - http-prompt
