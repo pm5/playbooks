@@ -3,6 +3,4 @@
   become: no
   homebrew: name={{ item }} state=latest
   with_items:
-    - ghc
-    - cabal-install
     - haskell-stack
