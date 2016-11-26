@@ -19,6 +19,7 @@
     - stylus
     - babel-cli
     - eslint-cli
+    - eslint
     - jscs
     - http-server
     - serve
