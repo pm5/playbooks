@@ -10,15 +10,16 @@
       - 2.3.0
     ruby_default_version: 2.3.0
   roles:
-    #- darwin
-    #- vim
-    #- syncthing
-    #- nodejs
-    #- python
+    - darwin
+    - vim
+    - syncthing
+    - nodejs
+    - python
     - ruby
-    #- php
-    #- haskell
-    #- golang
+    - php
+    - haskell
+    - golang
+    - scheme
     #- math
     #- 2dgraphic
     #- photo

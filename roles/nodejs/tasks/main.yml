@@ -16,18 +16,10 @@
     executable: /bin/bash
   with_items:
     - pug-cli
-    - stylus
-    - babel-cli
     - eslint-cli
     - eslint
-    - jscs
-    - http-server
-    - serve
     - live-server
     - localtunnel
-    - standard
-    - cloudflare-cli
-    - statuscake-cli
     - geojsonio-cli
     - caniuse-cmd
     - moretext
@@ -35,3 +27,5 @@
     - node-inspector
     - shelljs
     - shx
+    - typescript
+    - ts-node
