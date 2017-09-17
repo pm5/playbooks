@@ -4,3 +4,4 @@
   homebrew_cask: name={{ item }}
   with_items:
     - gimp
+    - exif

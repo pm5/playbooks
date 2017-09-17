@@ -1,14 +1,14 @@
 ---
 - hosts: localhost
   vars:
-    phpbrew_php_version: 7.0.7
+    phpbrew_php_version: 7.1.0
     python_versions:
       - 2.7.10
-      - 3.5.0
-    python_global_version: 3.6.0a1
+      - 3.6.1
+    python_global_version: 3.6.1
     ruby_versions:
-      - 2.3.0
-    ruby_default_version: 2.3.0
+      - 2.4.1
+    ruby_default_version: 2.4.1
   roles:
     - darwin
     - vim
@@ -18,7 +18,7 @@
     - ruby
     - php
     - haskell
-    - golang
+    #- golang
     - scheme
     #- math
     #- 2dgraphic
