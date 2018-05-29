@@ -1,6 +1,11 @@
 ---
-- name: Ensure GHC and Cabal are the latest.
+- name: Ensure Haskell tools in Homebrew are the latest version.
   become: no
   homebrew: name={{ item }} state=latest
   with_items:
     - haskell-stack
+#- name: Ensure Haskell tools in Homebrew Cask are the latest version.
+  #become: no
+  #homebrew_cask: name={{ item }} state=latest
+  #with_items:
+    #- haskell-platform

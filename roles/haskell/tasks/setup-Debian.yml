@@ -5,10 +5,10 @@
 - name: Ensure The Haskell Tool Stack APT repository is present.
   apt_repository: repo='deb http://download.fpcomplete.com/debian jessie main'
 
-- name: Ensure Haskell packages are the latest.
+- name: Ensure Haskell tools are the latest version.
   become: yes
   apt: name={{ item }} state=latest cache_valid_time=86400
   items:
-    #- haskell-platform
-    #- ghc
+    - haskell-platform
+    - ghc
     - stack
