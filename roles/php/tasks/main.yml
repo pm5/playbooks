@@ -21,9 +21,6 @@
   args:
     creates: ~/.phpbrew/php/php-{{ phpbrew_php_version }}
 
-- name: Ensure PHP {{ phpbrew_php_version }} is the default.
-  shell: source ~/.phpbrew/bashrc && phpbrew switch {{ phpbrew_php_version }}
-
 - name: Ensure Composer is present.
   shell: curl -sS https://getcomposer.org/installer | (source ~/.phpbrew/bashrc && php)
   args:
