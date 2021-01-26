@@ -36,6 +36,7 @@
   homebrew:
     state: latest
     name:
+      - pass
       - aspell
       - autoconf
       - automake
