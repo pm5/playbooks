@@ -83,7 +83,7 @@
   with_items:
     - amethyst
     - coconutbattery
-    - firefoxdeveloperedition
+    - firefox-developer-edition
     - chromium
     - gpg-suite
     - iterm2
