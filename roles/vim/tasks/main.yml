@@ -3,8 +3,15 @@
 
 - name: Ensure FZF is the latest
   become: no
-  git: repo=https://github.com/junegunn/fzf.git dest={{ ansible_env.HOME }}/.fzf clone=yes update=yes depth=1
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: "{{ ansible_env.HOME }}/.fzf"
+    clone: yes
+    update: yes
+    depth: 1
 
 - name: Ensure FZF is installed
   become: no
-  command: "{{ ansible_env.HOME }}/.fzf/install chdir={{ ansible_env.HOME }} creates={{ ansible_env.HOME }}/.fzf.bash"
+  command: "{{ ansible_env.HOME }}/.fzf/install"
+  args:
+    chdir: "{{ ansible_env.HOME }}"
