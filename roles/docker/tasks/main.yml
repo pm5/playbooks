@@ -1,0 +1,14 @@
+---
+- name: Ensure Docker toolchain is the latest
+  become: no
+  homebrew:
+    name:
+      - docker
+      - docker-compose
+    state: latest
+
+- name: Ensure Docker.app is the latest
+  become: no
+  homebrew_cask:
+    name: docker
+    state: latest

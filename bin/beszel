@@ -7,3 +7,4 @@ ANSIBLE_PLAYBOOKS_DIRECTORY="${SRC_DIRECTORY}/playbooks"
 echo "Provision $HOSTNAME with Ansible"
 cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
 ansible-playbook playbooks/mbp.yml -e "hostname=${HOSTNAME}"
+ansible-playbook playbooks/php.yml -e "hostname=${HOSTNAME}"
