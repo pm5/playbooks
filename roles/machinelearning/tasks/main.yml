@@ -1,9 +1,0 @@
----
-- name: ensure Homebrew is tapped to homebrew/science
-  homebrew_tap: tap=homebrew/science state=present
-
-- name: Install packages
-  homebrew_cask: name={{ item }} state=present
-  ignore_errors: yes
-  with_items:
-    - octave

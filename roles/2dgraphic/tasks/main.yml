@@ -1,9 +1,0 @@
----
-- include: setup-{{ ansible_os_family }}.yml
-- name: Ensure 2D graphic design packages are the latest.
-  homebrew_cask: name={{ item }} state=present
-  ignore_errors: yes
-  with_items:
-    - vectr
-    - inkscape
-    - processing
