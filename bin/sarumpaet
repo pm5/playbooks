@@ -1,10 +1,9 @@
 #!/bin/bash
 
-HOSTNAME=${1:-$(hostname)}
+HOSTNAME=${1:-$(basename $0)}
 SRC_DIRECTORY="${HOME}/src"
-LIB_DIRECTORY="${HOME}/lib"
 ANSIBLE_PLAYBOOKS_DIRECTORY="${SRC_DIRECTORY}/playbooks"
 
-echo "Provision with Ansible"
+echo "Provision $HOSTNAME with Ansible"
 cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
 ansible-playbook playbooks/mbp.yml -e "hostname=${HOSTNAME}"
