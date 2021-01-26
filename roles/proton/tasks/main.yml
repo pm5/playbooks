@@ -1,0 +1,6 @@
+---
+- name: Ensure PhpStorm is the latest
+  homebrew_cask: name={{ item }} state=present
+  ignore_errors: yes
+  with_items:
+    - phpstorm
