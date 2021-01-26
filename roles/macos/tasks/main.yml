@@ -16,60 +16,67 @@
   shell: scutil --set ComputerName {{hostname}}
 
 - name: Ensure Homebrew is tapped to homebrew/cask
-  homebrew_tap: tap=homebrew/cask state=present
+  homebrew_tap:
+    name: homebrew/cask
+    state: present
 
 - name: Ensure Homebrew itself and installed packages are the latest
-  homebrew: state=latest update_homebrew=yes upgrade_all=yes
+  homebrew:
+    state: latest
+    update_homebrew: yes
+    upgrade_all: yes
 
 - name: Ensure Homebrew packages are the latest
-  homebrew: name={{ item }} state=latest
   ignore_errors: yes
-  with_items:
-    - aspell
-    - autoconf
-    - automake
-    - bash-completion
-    - bvi
-    - cmake
-    - cowsay
-    - cscope
-    - ctags
-    - curl
-    - dict
-    - espeak
-    - ffmpeg
-    - fortune
-    - git
-    - git-annex
-    - gnupg
-    - graphicsmagick
-    - graphviz
-    - imagemagick
-    - jpeg
-    - jq
-    - mcrypt
-    - mhash
-    - mobile-shell
-    - mr
-    - msmtp
-    - mutt
-    - ncftp
-    - nmap
-    - openssl
-    - pandoc
-    - pkg-config
-    - pwgen
-    - readline
-    - rename
-    - sl
-    - sqlite
-    - tig
-    - tmux
-    - tree
-    - unrar
-    - w3m
-    - webp
-    - wget
+  homebrew:
+    state: latest
+    name:
+      - aspell
+      - autoconf
+      - automake
+      - bash-completion
+      - bvi
+      - cmake
+      - cowsay
+      - cscope
+      - ctags
+      - curl
+      - dict
+      - espeak
+      - ffmpeg
+      - fortune
+      - git
+      - git-annex
+      - gnupg
+      - graphicsmagick
+      - graphviz
+      - imagemagick
+      - java
+      - jpeg
+      - jq
+      - mcrypt
+      - mhash
+      - mobile-shell
+      - mr
+      - msmtp
+      - mutt
+      - ncftp
+      - nmap
+      - openssl
+      - pandoc
+      - pkg-config
+      - pwgen
+      - readline
+      - rename
+      - sl
+      - sqlite
+      - tig
+      - tmux
+      - tree
+      - unrar
+      - w3m
+      - webp
+      - wget
 
 - name: Ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
@@ -79,9 +86,8 @@
     - coconutbattery
     - firefoxdeveloperedition
     - chromium
-    - gpgtools
+    - gpg-suite
     - iterm2
-    - java
     - min
     - the-unarchiver
     - typora

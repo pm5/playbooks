@@ -1,9 +1,6 @@
 ---
 - hosts: localhost
-  vars:
-    phpbrew_php_version: 7.2
   roles:
     - macos
     - vim
     - syncthing
-    - php

@@ -1,14 +1,12 @@
 ---
-- name: Ensure Homebrew Dupes is tapped.
-  homebrew_tap: tap=homebrew/dupes state=present
-
 - name: Ensure PHP dependencies are updated.
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - curl
-    - openssl
-    - readline
-    - zlib
+  homebrew:
+    name:
+      - curl
+      - openssl
+      - readline
+      - zlib
+    state: latest
 
 - name: Ensure PHP dependencies are used.
   shell: source ~/.phpbrew/bashrc && phpbrew lookup-prefix homebrew

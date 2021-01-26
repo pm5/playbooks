@@ -1,10 +1,15 @@
 ---
 - name: Ensure PHPBrew is present.
-  get_url: url=https://github.com/phpbrew/phpbrew/raw/master/phpbrew mode=0755 dest=~/bin/phpbrew
+  get_url:
+    url: https://github.com/phpbrew/phpbrew/raw/master/phpbrew
+    mode: "0755"
+    dest: ~/bin/phpbrew
   register: phpbrew
 
 - name: Ensure PHPBrew is initialized.
-  shell: phpbrew init creates=~/.phpbrew/init
+  shell: phpbrew init
+  args:
+    creates: ~/.phpbrew/init
 
 - name: Ensure PHPBrew is updated.
   shell: phpbrew self-update
@@ -17,7 +22,7 @@
   when: ansible_os_family == "Darwin"
 
 - name: Ensure PHP {{ phpbrew_php_version }} is the present.
-  shell: phpbrew install {{ phpbrew_php_version }} +default +fpm -- --with-openssl=/usr/local/opt/openssl --without-bz2
+  shell: phpbrew install {{ phpbrew_php_version }} +default +fpm -- --with-openssl=/usr/local/opt/openssl --with-zlib-dir=/usr/local/opt/zlib --without-bz2
   args:
     creates: ~/.phpbrew/php/php-{{ phpbrew_php_version }}
 
