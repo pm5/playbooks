@@ -20,6 +20,11 @@
     name: homebrew/cask
     state: present
 
+- name: Ensure Homebrew is tapped to homebrew/cask-versions
+  homebrew_tap:
+    name: homebrew/cask-versions
+    state: present
+
 - name: Ensure Homebrew itself and installed packages are the latest
   homebrew:
     state: latest
