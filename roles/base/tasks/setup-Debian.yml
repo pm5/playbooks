@@ -40,6 +40,7 @@
     - gist
     - git
     - git-annex
+    - git-lfs
     - gnupg
     - graphicsmagick
     - graphviz

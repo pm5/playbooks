@@ -1,2 +1,9 @@
 ---
 - include: setup-{{ ansible_os_family }}.yml
+
+- name: Ensure git-lfs is initialized
+  shell: git lfs install
+
+- name: Ensure git-lfs is initialized globally
+  become: yes
+  shell: git lfs install --system
