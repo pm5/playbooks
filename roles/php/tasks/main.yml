@@ -6,8 +6,15 @@
     state: present
   ignore_errors: yes
 
+- name: Ensure PHP extensions are the latest
+  shell: pecl install {{ item }} || exit 0
+  with_items:
+    - mailparse
+
 - name: Ensure PhpStorm is the latest
-  homebrew_cask: name={{ item }} state=present
+  homebrew_cask:
+    name: '{{ item }}'
+    state: present
   ignore_errors: yes
   with_items:
     - phpstorm
