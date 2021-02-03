@@ -1,0 +1,8 @@
+---
+- name: Ensure PHP is the latest
+  apt:
+    name:
+      - php
+      - php-xml
+    state: latest
+  become: yes
