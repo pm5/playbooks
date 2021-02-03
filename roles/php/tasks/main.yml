@@ -1,20 +1,7 @@
 ---
-- name: Ensure PHP toolchain is the latest
-  homebrew:
-    name:
-      - composer
-    state: present
-  ignore_errors: yes
+- include: setup-{{ ansible_os_family }}.yml
 
 - name: Ensure PHP extensions are the latest
   shell: pecl install {{ item }} || exit 0
   with_items:
     - mailparse
-
-- name: Ensure PhpStorm is the latest
-  homebrew_cask:
-    name: '{{ item }}'
-    state: present
-  ignore_errors: yes
-  with_items:
-    - phpstorm
