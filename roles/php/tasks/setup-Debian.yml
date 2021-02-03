@@ -3,6 +3,7 @@
   apt:
     name:
       - php
+      - php-curl
       - php-xml
     state: latest
   become: yes
