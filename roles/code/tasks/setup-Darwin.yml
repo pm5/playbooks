@@ -1,0 +1,12 @@
+---
+- name: Ensure Perl toolchain is the latest
+  homebrew:
+    name:
+      - perl
+      - cpanminus
+    state: latest
+
+- name: Ensure Rakudo toolchain is the latest
+  homebrew:
+    name: rakudo-star
+    state: latest

@@ -1,0 +1,13 @@
+---
+- name: Ensure Perl toochain is the latest
+  apt:
+    name:
+      - perl
+      - cpanminus
+  become: yes
+
+- name: Ensure Rakudo toolchain is the latest
+  apt:
+    name: rakudo-star
+    state: latest
+  become: yes
