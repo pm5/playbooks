@@ -1,2 +1,0 @@
----
-- include: setup-{{ ansible_os_family }}.yml

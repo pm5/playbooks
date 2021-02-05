@@ -1,5 +1,0 @@
----
-- name: Ensure ChezScheme is the latest.
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - homebrew/x11/chezscheme
