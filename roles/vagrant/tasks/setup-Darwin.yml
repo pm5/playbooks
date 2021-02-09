@@ -1,0 +1,27 @@
+---
+- name: Ensure Virtualbox and Vagrant are the latest.
+  ignore_errors: yes
+  homebrew_cask:
+    name:
+      - vagrant
+      - virtualbox
+      - virtualbox-extension-pack
+    state: latest
+  become: no
+  register: vagrant_changed_virtualbox
+
+- name: Ensure Virtualbox and Vagrant are the latest.
+  ignore_errors: yes
+  homebrew:
+    name:
+      - vagrant-completion
+    state: latest
+  become: no
+
+- name: Display message to finish installation
+  debug:
+    msg: |
+      virtualbox requires a kernel extension to work.
+      If the installation fails, retry after you enable it in:
+      System Preferences → Security & Privacy → General
+  when: vagrant_changed_virtualbox
