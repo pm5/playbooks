@@ -3,6 +3,7 @@
   apt:
     name:
       - perl
+      - perl-doc
       - cpanminus
       - carton
       - liblocal-lib-perl
