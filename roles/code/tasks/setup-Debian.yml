@@ -5,6 +5,7 @@
       - perl
       - cpanminus
       - carton
+      - liblocal-lib-perl
     state: latest
   become: yes
 
