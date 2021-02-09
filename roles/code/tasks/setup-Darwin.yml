@@ -11,3 +11,8 @@
   homebrew:
     name: rakudo-star
     state: latest
+
+- name: Ensure OPAM is the latest
+  homebrew:
+    name: opam
+    state: latest

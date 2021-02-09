@@ -14,3 +14,9 @@
     name: rakudo
     state: latest
   become: yes
+
+- name: Ensure OPAM is the latest
+  apt:
+    name: opam
+    state: latest
+  become: yes
