@@ -1,10 +1,26 @@
 ---
-- name: Ensure nvm is the latest.
+- name: Ensure nodebrew is present.
   become: no
-  git: repo=https://github.com/creationix/nvm.git dest={{ ansible_env.HOME }}/.nvm clone=yes update=yes
-
-- name: Ensure default Node.js is the latest {{ nodejs_version }}.
-  become: no
-  shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ nodejs_version }} && nvm alias default {{ nodejs_version }}
+  command: curl -L git.io/nodebrew | perl - setup
   args:
-    executable: /bin/bash
+    creates: '{{ nodebrew_home }}'
+
+- name: Ensure nodebrew is the latest.
+  become: no
+  command: nodebrew selfupdate
+  environment:
+    PATH: '{{ nodebrew_home }}/current/bin:{{ ansible_env.PATH }}'
+
+- name: Ensure Node.js is present.
+  become: no
+  command: nodebrew install {{ nodebrew_nodejs_version }}
+  environment:
+    PATH: '{{ nodebrew_home }}/current/bin:{{ ansible_env.PATH }}'
+  args:
+    creates: '{{ nodebrew_home }}/node/*'
+
+- name: Ensure Node.js is used.
+  become: no
+  command: nodebrew use {{ nodebrew_nodejs_version }}
+  environment:
+    PATH: '{{ nodebrew_home }}/current/bin:{{ ansible_env.PATH }}'
