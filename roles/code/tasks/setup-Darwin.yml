@@ -4,6 +4,7 @@
     name:
       - perl
       - cpanminus
+      - carton
     state: latest
 
 - name: Ensure Rakudo toolchain is the latest
