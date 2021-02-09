@@ -10,6 +10,6 @@
 
 - name: Ensure Rakudo toolchain is the latest
   apt:
-    name: rakudo-star
+    name: rakudo
     state: latest
   become: yes

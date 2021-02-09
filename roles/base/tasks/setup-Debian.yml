@@ -23,8 +23,8 @@
     - automake
     - bash-completion
     - bzr
-    - calibre
-    - chromium-browser
+    #- calibre
+    #- chromium
     - cmake
     - cscope
     - ctags
@@ -34,9 +34,9 @@
     - debfoster
     - espeak
     - ffmpeg
-    - firefox
+    #- iceweasel
     - fortune
-    - fonts-opendyslexic
+    #- fonts-opendyslexic
     - gist
     - git
     - git-annex
@@ -52,7 +52,6 @@
     - libreadline-dev
     - mcrypt
     - mercurial
-    - mongodb
     - mosh
     - mr
     - msmtp
@@ -68,24 +67,14 @@
     - pngquant
     - proj-bin
     - proj-data
-    - pwgen
-    - remind
-    - rename
-    - sqlite
-    - tig
-    - tmux
-    - traceroute
-    - tree
-    - unrar
-    - vlc
+    #- vlc
     - w3m
     - webp
     - wget
-    - wireshark
-    - xbacklight
-    - xclip
+    #- wireshark
+    #- xbacklight
+    #- xclip
     - whois
-    #- hub
 
 - name: Ensure Deiabn system is upgraded.
   become: yes
