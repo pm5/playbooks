@@ -1,0 +1,6 @@
+---
+- name: Ensure Go toolchain is the latest.
+  homebrew:
+    name:
+      - golang
+    state: latest
