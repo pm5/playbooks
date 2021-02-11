@@ -76,6 +76,7 @@
     #- xbacklight
     #- xclip
     - whois
+    - vim-nox
 
 - name: Ensure Debian system is upgraded.
   become: yes
