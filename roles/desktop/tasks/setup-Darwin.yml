@@ -1,0 +1,6 @@
+---
+- name: Ensure Homebrew Cask packages are the latest.
+  homebrew_cask:
+    name:
+      - flux
+    state: latest
