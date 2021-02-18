@@ -2,7 +2,5 @@
 - hosts: localhost
   roles:
     - base
-    - vim
-    - syncthing
-    - docker
     - code
+    - syncthing

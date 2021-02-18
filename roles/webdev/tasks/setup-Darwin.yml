@@ -1,4 +1,18 @@
 ---
+- name: Ensure Docker toolchain is the latest
+  become: no
+  homebrew:
+    name:
+      - docker
+      - docker-compose
+    state: latest
+
+- name: Ensure Docker.app is the latest
+  become: no
+  homebrew_cask:
+    name: docker
+    state: latest
+
 - name: Ensure Virtualbox and Vagrant are the latest.
   ignore_errors: yes
   homebrew_cask:
@@ -18,10 +32,18 @@
     state: latest
   become: no
 
-- name: Display message to finish installation
+- name: Display message to finish Virtualbox installation
   debug:
     msg: |
       virtualbox requires a kernel extension to work.
       If the installation fails, retry after you enable it in:
       System Preferences → Security & Privacy → General
   when: vagrant_changed_virtualbox
+
+- name: Ensure VS Code is the latest
+  ignore_errors: yes
+  homebrew_cask:
+    name:
+      - visual-studio-code
+    state: latest
+  become: no

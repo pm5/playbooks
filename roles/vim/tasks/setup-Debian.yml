@@ -1,8 +1,0 @@
----
-- name: Ensure VIM packages are the latest.
-  apt:
-    name:
-      - vim
-    state: latest
-    cache_valid_time: 86400
-  become: yes

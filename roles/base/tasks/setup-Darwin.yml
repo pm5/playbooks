@@ -84,6 +84,7 @@
       - w3m
       - webp
       - wget
+      - vim
 
 - name: Ensure Homebrew Cask packages are the latest
   homebrew_cask: name={{ item }} state=present
