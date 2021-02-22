@@ -1,0 +1,73 @@
+---
+- name: Ensure Perl toochain is the latest
+  apt:
+    name:
+      - perl
+      - perl-doc
+      - cpanminus
+      - carton
+      - liblocal-lib-perl
+    state: latest
+  become: yes
+
+- name: Ensure Rakudo toolchain is the latest
+  apt:
+    name: rakudo
+    state: latest
+  become: yes
+
+- name: Ensure OPAM is the latest
+  apt:
+    name: opam
+    state: latest
+  become: yes
+
+- name: Ensure Python toolchain is the latest
+  apt:
+    name:
+      - python3-pip
+    state: latest
+  become: yes
+
+- name: Ensure system default Python is set to Python 3.
+  become: yes
+  alternatives:
+    name: python
+    link: /usr/bin/python
+    path: /usr/bin/python2
+    priority: 40
+
+- name: Ensure system default Python is set to Python 3.
+  become: yes
+  alternatives:
+    name: python
+    link: /usr/bin/python
+    path: /usr/bin/python3
+
+- name: Ensure system default Pip is set to Pip 3.
+  become: yes
+  alternatives:
+    name: pip
+    link: /usr/bin/pip
+    path: /usr/bin/pip3
+
+- name: Ensure system default PyDoc is set to PyDoc 3.
+  become: yes
+  alternatives:
+    name: pydoc
+    link: /usr/bin/pydoc
+    path: /usr/bin/pydoc2
+    priority: 40
+
+- name: Ensure system default PyDoc is set to PyDoc 3.
+  become: yes
+  alternatives:
+    name: pydoc
+    link: /usr/bin/pydoc
+    path: /usr/bin/pydoc3
+
+- name: Ensure system default Python virtualenv is the latest.
+  become: yes
+  apt:
+    name: python3-venv
+    state: latest
