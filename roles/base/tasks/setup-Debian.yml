@@ -61,6 +61,7 @@
       - offlineimap
       - openssl
       - pandoc
+      - pass
       - pdftohtml
       - pkg-config
       - pngquant

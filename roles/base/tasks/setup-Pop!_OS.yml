@@ -13,6 +13,7 @@
   when: ansible_os_family != "Pop!_OS"
 
 - name: Ensure APT packages are the latest.
+  become: yes
   apt:
     name:
       - ack
@@ -62,6 +63,7 @@
       - offlineimap
       - openssl
       - pandoc
+      - pass
       - pdftohtml
       - pkg-config
       - pngquant
@@ -81,7 +83,6 @@
     state: latest
     update_cache: yes
     cache_valid_time: 86400
-  become: yes
 
 - name: Ensure Debian system is upgraded.
   become: yes

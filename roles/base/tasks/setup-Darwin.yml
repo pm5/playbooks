@@ -37,7 +37,6 @@
     state: latest
     name:
       - ack
-      - pass
       - aspell
       - autoconf
       - automake
@@ -72,6 +71,7 @@
       - nmap
       - openssl
       - pandoc
+      - pass
       - pkg-config
       - pwgen
       - readline
