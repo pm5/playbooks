@@ -16,8 +16,16 @@
 - name: Ensure APT packages are the latest.
   apt:
     name:
+      - firefox
+      - calibre
+      - chromium
       - gnome-tweaks
       - signal-desktop
+      - vlc
+      #- fonts-opendyslexic
+      #- wireshark
+      #- xbacklight
+      #- xclip
     state: latest
     update_cache: yes
   become: yes
