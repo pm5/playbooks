@@ -1,0 +1,23 @@
+---
+- name: Ensure Signal APT release key is present.
+  apt_key:
+    url: https://updates.signal.org/desktop/apt/keys.asc
+    state: present
+  become: yes
+
+- name: Ensure Syncthing APT repository is present.
+  apt_repository:
+    repo: deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+    filename: signal-xenial.list
+    mode: 644
+    state: present
+  become: yes
+
+- name: Ensure APT packages are the latest.
+  apt:
+    name:
+      - gnome-tweaks
+      - signal-desktop
+    state: latest
+    update_cache: yes
+  become: yes
