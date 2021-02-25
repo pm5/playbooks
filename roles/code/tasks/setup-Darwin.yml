@@ -16,3 +16,8 @@
   homebrew:
     name: opam
     state: latest
+
+- name: Ensure Node.js toolchain is the latest
+  homebrew:
+    name:
+      - nodejs
