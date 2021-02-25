@@ -71,6 +71,7 @@
       - pngquant
       - proj-bin
       - proj-data
+      - pwgen
       - rename
       - tmux
       - w3m
