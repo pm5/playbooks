@@ -74,6 +74,7 @@
       - proj-data
       - pwgen
       - rename
+      - tig
       - tmux
       - w3m
       - webp
