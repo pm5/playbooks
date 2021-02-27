@@ -19,7 +19,7 @@
     name:
       - firefox
       - calibre
-      - chromium
+      #- chromium
       - gnome-tweaks
       - signal-desktop
       - vlc
