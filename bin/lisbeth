@@ -6,6 +6,6 @@ ANSIBLE_PLAYBOOKS_DIRECTORY="${SRC_DIRECTORY}/playbooks"
 
 echo "Provision $HOSTNAME with Ansible"
 cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
-ansible-playbook playbooks/workstation.yml -e "hostname=${HOSTNAME}"
-ansible-playbook playbooks/desktop.yml -e "hostname=${HOSTNAME}"
-ansible-playbook playbooks/webdev.yml -e "hostname=${HOSTNAME}"
+ansible-playbook -e "hostname=${HOSTNAME}" -K playbooks/workstation.yml
+ansible-playbook -e "hostname=${HOSTNAME}" playbooks/desktop.yml
+ansible-playbook -e "hostname=${HOSTNAME}" playbooks/webdev.yml
