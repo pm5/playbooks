@@ -1,0 +1,20 @@
+---
+- name: Ensure ProtonVPN APT release key is present.
+  become: yes
+  apt_key:
+    url: https://repo.protonvpn.com/debian/public_key.asc
+
+- name: Ensure ProtonVPN APT repository is present.
+  become: yes
+  apt_repository:
+    repo: deb https://repo.protonvpn.com/debian unstable main
+    mode: 644
+
+- name: Ensure ProtonVPN APT package is the latest.
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: 86400
+    name:
+      - protonvpn
