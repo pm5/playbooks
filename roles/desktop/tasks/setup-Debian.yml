@@ -1,1 +1,11 @@
 ---
+- name: Ensure APT packages are the latest.
+  apt:
+    name:
+      - calibre
+      - chromium
+      - iceweasel
+      - vlc
+      - wireshark
+      - xbacklight
+      - xclip
