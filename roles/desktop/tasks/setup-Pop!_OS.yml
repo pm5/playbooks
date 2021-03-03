@@ -5,7 +5,7 @@
     url: https://updates.signal.org/desktop/apt/keys.asc
     state: present
 
-- name: Ensure Syncthing APT repository is present.
+- name: Ensure Signal APT repository is present.
   become: yes
   apt_repository:
     repo: deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
