@@ -31,10 +31,9 @@
     update_homebrew: yes
     upgrade_all: yes
 
-- name: Ensure Homebrew packages are the latest
-  ignore_errors: yes
+- name: Ensure Homebrew packages are present
   homebrew:
-    state: latest
+    state: present
     name:
       - ack
       - aspell
@@ -85,22 +84,27 @@
       - webp
       - wget
       - vim
+  when: base_command == "install"
 
 - name: Ensure Homebrew Cask packages are the latest
-  homebrew_cask: name={{ item }} state=present
-  ignore_errors: yes
-  with_items:
-    - amethyst
-    - coconutbattery
-    - firefox-developer-edition
-    - chromium
-    - gpg-suite
-    - iterm2
-    - min
-    - the-unarchiver
-    - typora
-    - vlc
-    - wireshark
-    - signal
-    - tor-browser
-    - flux
+  homebrew_cask:
+    upgrade_all: yes
+
+- name: Ensure Homebrew Cask packages are present
+  homebrew_cask:
+    name:
+      - amethyst
+      - coconutbattery
+      - firefox-developer-edition
+      - chromium
+      - gpg-suite
+      - iterm2
+      - min
+      - the-unarchiver
+      - typora
+      - vlc
+      - wireshark
+      - signal
+      - tor-browser
+    state: present
+  when: base_command == "install"
