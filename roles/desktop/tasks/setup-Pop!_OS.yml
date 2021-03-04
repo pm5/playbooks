@@ -23,6 +23,7 @@
       - gnome-tweaks
       - signal-desktop
       - vlc
+      - transmission
       #- fonts-opendyslexic
       #- wireshark
       #- xbacklight
