@@ -1,9 +1,5 @@
 ---
-- name: Ensure hostname variable is defined.
-  command: "false"
-  when: not hostname
-
-- name: Ensure hostname in /etc/hosts is set.
+- name: Ensure hostname in /etc/hosts is set to {{ hostname }}.
   become: yes
   lineinfile: 'regexp="^127\.0\.0\.1" dest=/etc/hosts create=yes state=present line="127.0.0.1\tlocalhost {{ hostname }}"'
 

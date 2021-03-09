@@ -1,4 +1,13 @@
 ---
+- name: Gather hostname.
+  command: "hostname"
+  register: hostname_output
+
+- name: Ensure hostname is defined.
+  set_fact:
+    hostname: "{{ hostname_output.stdout }}"
+  when: hostname is not defined or not hostname
+
 - include: setup-{{ ansible_os_family }}.yml
 
 - name: Ensure git-lfs is initialized
