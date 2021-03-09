@@ -1,0 +1,9 @@
+#!/bin/bash
+
+HOSTNAME=${1:-$(basename $0)}
+SRC_DIRECTORY="${HOME}/src"
+ANSIBLE_PLAYBOOKS_DIRECTORY="${SRC_DIRECTORY}/playbooks"
+
+echo "Provision $HOSTNAME with Ansible"
+cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
+ansible-playbook playbooks/server.yml
