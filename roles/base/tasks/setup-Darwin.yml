@@ -1,8 +1,4 @@
 ---
-- name: Ensure hostname var is defined
-  command: 'false'
-  when: not hostname
-
 - name: Ensure hostname is {{hostname}}
   become: yes
   shell: scutil --set HostName {{hostname}}
