@@ -1,1 +1,52 @@
 ---
+- name: Ensure database tools are the latest
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: 86400
+    name:
+      - mysql-client
+      - postgresql-client-10
+
+- name: Ensure packages for Docker toolchain are the latest
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: 86400
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+
+- name: Ensure Docker APT key is present
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: Get Debian release name
+  command: lsb_release -cs
+  register: debian_release
+
+- name: Ensure Docker repository is present
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian {{ debian_release.stdout }} stable"
+    filename: docker.list
+    mode: 644
+    state: present
+
+- name: Ensure Docker is the latest
+  become: yes
+  apt:
+    state: latest
+    update_cache: yes
+    cache_valid_time: 86400
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
