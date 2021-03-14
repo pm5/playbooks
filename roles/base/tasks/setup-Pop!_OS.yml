@@ -30,6 +30,7 @@
       - automake
       - bash-completion
       - bzr
+      - bvi
       - cmake
       - cscope
       - universal-ctags
