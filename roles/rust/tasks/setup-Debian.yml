@@ -1,0 +1,8 @@
+---
+- name: Ensure Rust toolchains are the latest.
+  become: yes
+  apt:
+    state: latest
+    name:
+      - rustc
+      - cargo
