@@ -11,7 +11,7 @@
   become: yes
   apt:
     update_cache: yes
-    upgrade: yes
+    upgrade: safe
     cache_valid_time: 86400
 
 - name: Ensure basic tools are the latest.
