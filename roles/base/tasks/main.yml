@@ -9,25 +9,3 @@
   when: hostname is not defined or not hostname
 
 - include: setup-{{ ansible_os_family }}.yml
-
-- name: Ensure git-lfs is initialized
-  shell: git lfs install
-
-- name: Ensure git-lfs is initialized globally
-  become: yes
-  shell: git lfs install --system
-
-- name: Ensure FZF is the latest
-  become: no
-  git:
-    repo: https://github.com/junegunn/fzf.git
-    dest: "{{ ansible_env.HOME }}/.fzf"
-    clone: yes
-    update: yes
-    depth: 1
-
-- name: Ensure FZF is installed
-  become: no
-  command: "{{ ansible_env.HOME }}/.fzf/install"
-  args:
-    chdir: "{{ ansible_env.HOME }}"

@@ -2,6 +2,55 @@
 - name: Ensure APT packages are the latest.
   apt:
     name:
+      - ack
+      - acpi
+      - aptitude
+      - aspell
+      - autoconf
+      - automake
+      - bash-completion
+      - bzr
+      - bvi
+      - cmake
+      - cscope
+      - ctags
+      - dict
+      - debfoster
+      - espeak
+      - ffmpeg
+      - fortune
+      - gist
+      - git
+      - git-annex
+      - git-lfs
+      - graphicsmagick
+      - graphviz
+      - imagemagick
+      - jpeginfo
+      - jq
+      - ledger
+      - libreadline-dev
+      - mcrypt
+      - mercurial
+      - mr
+      - msmtp
+      - mutt
+      - ncftp
+      - offlineimap
+      - openssl
+      - pandoc
+      - pass
+      - pdftohtml
+      - pkg-config
+      - pngquant
+      - proj-bin
+      - proj-data
+      - pwgen
+      - rename
+      - tig
+      - webp
+      - wget
+
       - calibre
       - chromium
       - iceweasel

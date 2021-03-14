@@ -14,66 +14,18 @@
     upgrade: yes
     cache_valid_time: 86400
 
-- name: Ensure APT packages are the latest.
+- name: Ensure basic tools are the latest.
   become: yes
   apt:
     state: latest
     update_cache: yes
     cache_valid_time: 86400
     name:
-      - ack
-      - acpi
-      - aptitude
-      - aspell
-      - autoconf
-      - automake
-      - bash-completion
-      - bzr
-      - bvi
-      - cmake
-      - cscope
-      - ctags
-      - curl
-      - dict
-      - debfoster
-      - espeak
-      - ffmpeg
-      - fortune
-      - gist
-      - git
-      - git-annex
-      - git-lfs
-      - gnupg
-      - graphicsmagick
-      - graphviz
-      - imagemagick
-      - jpeginfo
-      - jq
-      - ledger
-      - libreadline-dev
-      - mcrypt
-      - mercurial
-      - mosh
-      - mr
-      - msmtp
-      - mutt
-      - ncftp
-      - nmap
-      - offlineimap
-      - openssl
-      - pandoc
-      - pass
-      - pdftohtml
-      - pkg-config
-      - pngquant
-      - proj-bin
-      - proj-data
-      - pwgen
-      - rename
-      - tig
       - tmux
       - w3m
-      - webp
-      - wget
-      - whois
       - vim-nox
+      - whois
+      - nmap
+      - mosh
+      - gnupg
+      - curl
