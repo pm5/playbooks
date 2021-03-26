@@ -29,3 +29,4 @@
       - mosh
       - gnupg
       - curl
+      - p7zip-full

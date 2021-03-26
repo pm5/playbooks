@@ -9,4 +9,3 @@ cd ${ANSIBLE_PLAYBOOKS_DIRECTORY}
 ansible-playbook -e "hostname=${HOSTNAME}" -K playbooks/workstation.yml
 ansible-playbook -e "hostname=${HOSTNAME}" playbooks/desktop.yml
 ansible-playbook -e "hostname=${HOSTNAME}" playbooks/webdev.yml
-ansible-playbook -e "hostname=${HOSTNAME}" playbooks/dev-rust.yml

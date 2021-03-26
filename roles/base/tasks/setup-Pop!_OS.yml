@@ -62,6 +62,7 @@
       - nmap
       - offlineimap
       - openssl
+      - p7zip-full
       - pandoc
       - pass
       - pdftohtml
