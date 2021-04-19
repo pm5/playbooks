@@ -1,0 +1,7 @@
+---
+- name: Ensure Go toolchain is the latest.
+  become: yes
+  apt:
+    name:
+      - golang
+    state: latest

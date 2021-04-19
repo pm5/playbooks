@@ -45,6 +45,7 @@
       - git-annex
       - git-lfs
       - gnupg
+      - gnuplot-nox
       - graphicsmagick
       - graphviz
       - imagemagick
