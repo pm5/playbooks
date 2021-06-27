@@ -12,7 +12,9 @@
 
 - name: Ensure Rakudo toolchain is the latest
   apt:
-    name: rakudo
+    name:
+      - rakudo
+      - perl6-zef
     state: latest
   become: yes
 
