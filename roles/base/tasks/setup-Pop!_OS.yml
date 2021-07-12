@@ -8,13 +8,6 @@
   hostname: name={{ hostname }}
   when: ansible_os_family != "Pop!_OS"
 
-- name: Ensure Debian system is upgraded.
-  become: yes
-  apt:
-    update_cache: yes
-    upgrade: yes
-    cache_valid_time: 86400
-
 - name: Ensure APT packages are the latest.
   become: yes
   apt:

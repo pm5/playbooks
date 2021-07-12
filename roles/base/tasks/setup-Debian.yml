@@ -7,13 +7,6 @@
   become: yes
   hostname: name={{ hostname }}
 
-- name: Ensure Debian system is upgraded.
-  become: yes
-  apt:
-    update_cache: yes
-    upgrade: safe
-    cache_valid_time: 86400
-
 - name: Ensure basic tools are the latest.
   become: yes
   apt:
