@@ -46,6 +46,7 @@
       - docker-ce
       - docker-ce-cli
       - docker-compose
+      - podman
 
 - name: Ensure cloud tools are the latest
   become: yes

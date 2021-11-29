@@ -4,4 +4,5 @@
   apt:
     name:
       - golang
+      - golang-golang-x-tools
     state: latest
