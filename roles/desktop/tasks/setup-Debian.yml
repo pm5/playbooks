@@ -52,7 +52,7 @@
       - wget
 
       - calibre
-      - chromium
+      #- chromium
       - iceweasel
       - vlc
       - wireshark

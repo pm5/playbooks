@@ -1,6 +1,6 @@
 ---
 - name: Ensure packages are the latest.
-  when: ansible_os_family == "Darwin"
+  when: ansible_distribution == "Darwin"
   homebrew_cask: name={{ item }}
   with_items:
     - sage
@@ -19,7 +19,7 @@
     - jupyter
 
 - name: Ensure packages are the latest.
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Debian"
   apt: name={{ item }} update_cache=yes cache_valid_time=86400
   with_items:
     #- sagemath

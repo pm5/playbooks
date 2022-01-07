@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOST=${1:-localhost}
+
+ansible -m setup ${HOST} | sed 's/localhost | SUCCESS => //'

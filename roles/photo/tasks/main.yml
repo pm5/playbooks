@@ -1,6 +1,6 @@
 ---
 - name: ensure photo-related tools are the latest
-  when: ansible_os_family == "Darwin"
+  when: ansible_distribution == "Darwin"
   homebrew_cask: name={{ item }}
   with_items:
     - gimp

@@ -8,4 +8,4 @@
     hostname: "{{ hostname_output.stdout }}"
   when: hostname is not defined or not hostname
 
-- include: setup-{{ ansible_os_family }}.yml
+- include: setup-{{ ansible_distribution }}.yml

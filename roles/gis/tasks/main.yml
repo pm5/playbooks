@@ -1,13 +1,13 @@
 ---
 - name: ensure Homebrew packages are the latest
-  when: ansible_os_family == "Darwin"
+  when: ansible_distribution == "Darwin"
   homebrew: name={{ item }} state=present
   ignore_errors: yes
   with_items:
     - gdal
 
 - name: ensure Homebrew Cask packages are the latest
-  when: ansible_os_family == "Darwin"
+  when: ansible_distribution == "Darwin"
   homebrew_cask: name={{ item }} state=present
   ignore_errors: yes
   with_items:

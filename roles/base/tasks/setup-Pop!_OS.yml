@@ -6,7 +6,7 @@
 - name: Ensure hostname is set.
   become: yes
   hostname: name={{ hostname }}
-  when: ansible_os_family != "Pop!_OS"
+  when: ansible_distribution != "Pop!_OS"
 
 - name: Ensure APT packages are the latest.
   become: yes
