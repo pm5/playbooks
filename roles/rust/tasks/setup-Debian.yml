@@ -6,3 +6,4 @@
     name:
       - rustc
       - cargo
+      - rusty-tags
