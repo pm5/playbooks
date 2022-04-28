@@ -42,6 +42,8 @@
       - graphicsmagick
       - graphviz
       - imagemagick
+      - iotop-c
+      - htop
       - jpeginfo
       - jq
       - ledger
