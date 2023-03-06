@@ -7,7 +7,7 @@
     cache_valid_time: 86400
     name:
       - default-mysql-client
-      - postgresql-client-10
+      - postgresql-client
 
 - name: Ensure packages for Docker toolchain are the latest
   become: yes
